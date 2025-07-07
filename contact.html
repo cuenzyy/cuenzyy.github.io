@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - QA Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-white text-gray-800">
+    <header class="bg-white shadow sticky top-0 z-50">
+      <div class="container mx-auto flex justify-between items-center py-4 px-6">
+        <h1 class="text-xl font-bold text-blue-600">Portfolio</h1>
+        <nav class="space-x-6 hidden md:flex">
+          <a href="home.html" class="text-sm font-medium hover:text-blue-500">Home</a>
+          <a href="work-experience.html" class="text-sm font-medium hover:text-blue-500">Work Experience</a>
+          <a href="gallery.html" class="text-sm font-medium hover:text-blue-500">Gallery</a>
+          <a href="social-media.html" class="text-sm font-medium hover:text-blue-500">Social Media</a>
+          <a href="contact.html" class="text-sm font-medium hover:text-blue-500">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="bg-gradient-to-b from-blue-500 to-blue-400 py-20 text-white text-center">
+      <h2 class="text-4xl font-bold mb-2">Get In Touch</h2>
+      <p class="max-w-xl mx-auto">Ready to start a conversation? I'd love to hear from you. Send me a message and I’ll respond as soon as possible.</p>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-8">
+      <!-- Form -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Send Message</h3>
+        <p class="text-sm text-gray-500 mb-6">Fill out the form below and I’ll get back to you as soon as possible.</p>
+        <form class="space-y-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <input type="text" placeholder="Full Name" class="w-full border px-4 py-2 rounded" />
+            <input type="email" placeholder="Email" class="w-full border px-4 py-2 rounded" />
+          </div>
+          <input type="text" placeholder="Subject" class="w-full border px-4 py-2 rounded" />
+          <textarea placeholder="Message" rows="4" class="w-full border px-4 py-2 rounded"></textarea>
+          <button class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">Send Message</button>
+        </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Contact Information</h3>
+        <p class="text-sm text-gray-500 mb-6">I'm always interested in new opportunities, whether you're a company looking to hire, a fellow developer interested in collaboration, or someone who just wants to connect.</p>
+
+        <div class="space-y-4">
+          <div class="border p-4 rounded">
+            <p class="font-semibold text-sm">Email</p>
+            <p class="text-sm text-blue-600">your.email@example.com</p>
+          </div>
+          <div class="border p-4 rounded">
+            <p class="font-semibold text-sm">Phone</p>
+            <p class="text-sm text-blue-600">+1 (555) 123-4567</p>
+            <p class="text-xs text-gray-500">Available Mon-Fri 9AM-6PM</p>
+          </div>
+          <div class="border p-4 rounded">
+            <p class="font-semibold text-sm">Location</p>
+            <p class="text-sm text-blue-600">San Francisco, CA</p>
+            <p class="text-xs text-gray-500">Open to remote opportunities</p>
+          </div>
+          <div class="border p-4 rounded">
+            <p class="font-semibold text-sm">Response Time</p>
+            <p class="text-sm text-blue-600">Within 24 hours</p>
+            <p class="text-xs text-gray-500">Usually much faster</p>
+          </div>
+          <div class="border p-4 rounded bg-green-50">
+            <p class="font-semibold text-sm text-green-700">Currently Available</p>
+            <p class="text-xs text-gray-600">I'm open to new opportunities and collaborations. Whether you're looking for a full-time position, freelance work, or just want to discuss a project, I’d love to hear from you.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-gray-50 py-16">
+      <div class="max-w-5xl mx-auto px-4 text-center">
+        <h3 class="text-xl font-bold mb-6">Frequently Asked Questions</h3>
+        <p class="text-sm text-gray-600 mb-8">Quick answers to common questions about working with me</p>
+        <div class="grid md:grid-cols-2 gap-6 text-left">
+          <div class="bg-white p-6 rounded shadow">
+            <p class="font-medium mb-2">What's your typical response time?</p>
+            <p class="text-sm text-gray-600">I usually respond within 24 hours, often much faster during business hours.</p>
+          </div>
+          <div class="bg-white p-6 rounded shadow">
+            <p class="font-medium mb-2">Are you available for remote work?</p>
+            <p class="text-sm text-gray-600">Yes! I’m fully set up for remote work and have experience with distributed teams.</p>
+          </div>
+          <div class="bg-white p-6 rounded shadow">
+            <p class="font-medium mb-2">What type of projects interest you?</p>
+            <p class="text-sm text-gray-600">I'm particularly interested in web applications, cloud solutions, and innovative tech projects.</p>
+          </div>
+          <div class="bg-white p-6 rounded shadow">
+            <p class="font-medium mb-2">Do you offer consulting services?</p>
+            <p class="text-sm text-gray-600">Yes, I provide consulting for architecture, code reviews, and technical strategy.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
