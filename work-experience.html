@@ -1,115 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>QA Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-white text-gray-900">
-  <!-- Navbar -->
-    <header class="bg-white shadow sticky top-0 z-50">
-      <div class="container mx-auto flex justify-between items-center py-4 px-6">
-        <h1 class="text-xl font-bold text-blue-600">Portfolio</h1>
-        <nav class="space-x-6 hidden md:flex">
-          <a href="home.html" class="text-sm font-medium hover:text-blue-500">Home</a>
-          <a href="work-experience.html" class="text-sm font-medium hover:text-blue-500">Work Experience</a>
-          <a href="gallery.html" class="text-sm font-medium hover:text-blue-500">Gallery</a>
-          <a href="social-media.html" class="text-sm font-medium hover:text-blue-500">Social Media</a>
-          <a href="contact.html" class="text-sm font-medium hover:text-blue-500">Contact</a>
-        </nav>
-      </div>
-    </header>
-  <header class="bg-gradient-to-b from-blue-500 to-blue-300 py-20 text-white text-center">
-    <h1 class="text-4xl font-bold mb-2">Work Experience</h1>
-    <p class="text-lg max-w-3xl mx-auto">
-      A journey through my professional career, showcasing growth, achievements, and the impact I've made.
-    </p>
-  </header>
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>QA Portfolio</title>
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+   </head>
+   <body class="bg-white text-gray-900">
+      <!-- Navbar -->
+      <header class="bg-white shadow sticky top-0 z-50">
+         <div class="container mx-auto flex justify-between items-center py-4 px-6">
+            <!-- Logo instead of Portfolio text -->
+            <a href="index.html">
+            <img src="images/cv_logo.png" alt="Portfolio Logo" class="h-8 w-auto">
+            </a>
+            <!-- Navigation -->
+            <nav class="hidden md:flex space-x-6 items-center">
+               <!-- nav of home -->
+               <div class="relative group">
+                  <a href="index.html" class="text-sm font-medium hover:text-blue-500 inline-flex items-center px-1 py-2">
+                     Home
+                     <svg class="w-2.5 h-2.5 ml-1 text-gray-500 group-hover:text-blue-500 transition-colors duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 18">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                     </svg>
+                  </a>
+                  <div class="absolute left-0 mt-2 w-40 bg-white border border-gray-200 shadow-lg rounded-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 group-hover:translate-y-0 translate-y-2 z-10">
+                     <a href="index.html#about" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">About Me</a>
+                     <a href="index.html#technologies" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Technologies</a>
+                     <a href="index.html#tech-skills" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Technical Skills</a>
+                     <a href="index.html#analytical-skills" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Analytical & Strategic Skills</a>
+                     <a href="index.html#collaborationncomunnication" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Collaboration & Communication</a>
+                     <a href="index.html#soft-skills" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Soft Skills</a>
+                  </div>
+               </div>
+               <!-- nav of work experience -->
+               <div class="relative group">
+                  <a href="work-experience.html" class="text-sm font-medium hover:text-blue-500 inline-flex items-center px-1 py-2">
+                     Work Experience
+                     <svg class="w-2.5 h-2.5 ml-1 text-gray-500 group-hover:text-blue-500 transition-colors duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 18">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                     </svg>
+                  </a>
+                  <div class="absolute left-0 mt-2 w-40 bg-white border border-gray-200 shadow-lg rounded-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 group-hover:translate-y-0 translate-y-2 z-10">
+                     <a href="work-experience.html#projects" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Projects</a>
+                     <a href="work-experience.html#testimonials" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Testimonials / Character Reference</a>
+                  </div>
+               </div>
+               <a href="certifications_n_trainings.html" class="text-sm font-medium hover:text-blue-500 px-1 py-2">Certifications and Trainings</a>
+               <a href="social-media.html" class="text-sm font-medium hover:text-blue-500 px-1 py-2">Social Media</a>
+               <a href="contact.html" class="text-sm font-medium hover:text-blue-500 px-1 py-2">Contact</a>
+            </nav>
+         </div>
+      </header>
+      <header class="bg-gradient-to-b from-blue-500 to-blue-300 py-20 text-white text-center">
+         <h1 class="text-4xl font-bold mb-2">Work Experience</h1>
+         <p class="text-lg max-w-3xl mx-auto">
+            A journey through my professional career, showcasing growth, achievements, and the impact I've made.
+         </p>
+      </header>
+         
+         <!-- Job 1 -->
+         <section>
+            <div class="container mx-auto px-4 max-w-5xl py-16 text-sm leading-relaxed text-gray-700">
+            <h2 class="text-xl font-semibold">Senior Quality Assurance Engineer</h2>
+            <p class="text-sm text-gray-500">EasyPos Solutions Inc. | Olongapo City, Philippines | 2023 - Present</p>
+            <div class="mt-4 space-y-4 text-sm leading-relaxed">
+               <p>Previously, I was a standalone QA for integrated partners (UberEATS, DoorDash, Menulog & Google Food Ordering). Later, these platforms were merged into our upgraded application called 
+                  <span class="relative group inline-block text-blue-600 cursor-pointer">STUDIO
+                  <span class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block w-56 text-xs text-white bg-black p-2 rounded">
+                  STUDIO is a product by Deliverit. It’s their cloud-based platform designed to help restaurants manage their digital storefronts, delivery settings, menus, promotions, and integrations with third-party services like Uber Eats and DoorDash—all from one place.</span>
+                  </span>. I collaborated closely with QA teammates and developers to deliver a seamless STUDIO experience.
+               </p>
+               <p>
+               </p>
+               <p>I began exploring automation tools like Selenium, Cypress, and Playwright. Initially, using Selenium, me and two senior QAs
+                  <span class="inline-flex items-center space-x-1">
+                     <span x-data="{show:false,hideTimeout:null,onMouseEnter(){clearTimeout(this.hideTimeout);this.show=true},onMouseLeave(){this.hideTimeout=setTimeout(()=>this.show=false,150)}}" @mouseenter="onMouseEnter" @mouseleave="onMouseLeave" class="relative text-blue-600 cursor-pointer inline-flex">
+                        <span>Hanna</span>
+                        <span x-show="show" x-transition class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-black text-white text-xs p-4 rounded-lg z-50 flex flex-col items-center space-y-3 border border-white shadow-lg" style="display: none;">
+                           <span class="flex items-center space-x-3">
+                              <img src="images/Hanna.jpg" alt="Hanna" class="w-10 h-10 rounded-full object-cover border border-white">
+                              <a href="https://www.linkedin.com/in/hanna-hilario/" target="_blank" class="underline text-blue-300">Hanna Hilario</a>
+                           </span>
+                           <span class="text-center pt-2">POD Leader | Senior Software Quality Assurance Engineer | Beginner in Automation Testing</span>
+                        </span>
+                     </span>
+                     <span class="text-black select-none pointer-events-none">&amp;</span>
+                     <span x-data="{show:false,hideTimeout:null,onMouseEnter(){clearTimeout(this.hideTimeout);this.show=true},onMouseLeave(){this.hideTimeout=setTimeout(()=>this.show=false,150)}}" @mouseenter="onMouseEnter" @mouseleave="onMouseLeave" class="relative text-blue-600 cursor-pointer inline-flex">
+                        <span>Julianne</span>
+                        <span x-show="show" x-transition class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-black text-white text-xs p-4 rounded-lg z-50 flex flex-col items-center space-y-3 border border-white shadow-lg" style="display: none;">
+                           <span class="flex items-center space-x-3">
+                              <img src="images/Julianne.jpg" alt="Julianne" class="w-10 h-10 rounded-full object-cover border border-white">
+                              <span class="text-white">Julianne Franco</span>
+                           </span>
+                           <span class="text-center pt-2">Senior Software Quality Assurance Engineer | Beginner in Automation Testing</span>
+                        </span>
+                     </span>
+                  </span>, automated our product's online ordering flow.
+               </p>
 
-  <main class="max-w-5xl mx-auto px-4 py-16">
-    <!-- Job 1 -->
-    <section class="mb-12">
-      <h2 class="text-xl font-semibold">Senior Quality Assurance Engineer</h2>
-      <p class="text-sm text-gray-500">TechCorp Solutions | San Francisco, CA | 2023 - Present</p>
-      <p class="mt-2">
-        Leading QA initiatives across multiple product lines, implementing comprehensive testing strategies, and mentoring junior QA engineers. Established automated testing frameworks that improved testing efficiency by 60%.
-      </p>
-      <div class="mt-4">
-        <h3 class="font-medium">Technologies Used:</h3>
-        <div class="flex flex-wrap gap-2 mt-2 text-sm">
-          <span class="bg-gray-200 px-2 py-1 rounded">Selenium</span>
-          <span class="bg-gray-200 px-2 py-1 rounded">Cypress</span>
-          <span class="bg-gray-200 px-2 py-1 rounded">Jest</span>
-          <span class="bg-gray-200 px-2 py-1 rounded">TestRail</span>
-          <span class="bg-gray-200 px-2 py-1 rounded">Postman</span>
-          <span class="bg-gray-200 px-2 py-1 rounded">Docker</span>
-          <span class="bg-gray-200 px-2 py-1 rounded">Jenkins</span>
-        </div>
-        <h3 class="mt-4 font-medium">Key Achievements:</h3>
-        <ul class="list-disc list-inside">
-          <li>Reduced critical bugs in production by 75%</li>
-          <li>Implemented automated testing framework</li>
-          <li>Led QA team of 4 engineers</li>
-          <li>Improved testing coverage to 95%</li>
-        </ul>
-      </div>
-    </section>
+               <p>
+                  Later on, I proposed switching to Playwright for its flexibility. After presenting a new framework I developed, we gradually transitioned to Playwright and expanded our automated test coverage significantly.
+               </p>
+            </div>
+            <div class="mt-6">
+               <h3 class="font-medium">Technologies Used:</h3>
+               <div class="flex flex-wrap gap-2 mt-2 text-sm">
+                  <span class="bg-gray-200 px-2 py-1 rounded">Playwright</span>
+                  <span class="bg-gray-200 px-2 py-1 rounded">Selenium</span>
+                  <span class="bg-gray-200 px-2 py-1 rounded">Cypress</span>
+                  <span class="bg-gray-200 px-2 py-1 rounded">Testiny</span>
+                  <span class="bg-gray-200 px-2 py-1 rounded">Postman</span>
+                  <span class="bg-gray-200 px-2 py-1 rounded">Docker</span>
+                  <span class="bg-gray-200 px-2 py-1 rounded">Jenkins</span>
+                  <span class="bg-gray-200 px-2 py-1 rounded">AWS CloudWatch</span>
+                  <span class="bg-gray-200 px-2 py-1 rounded">AWS Lambda</span>
+                  <span class="bg-gray-200 px-2 py-1 rounded">AWS AppSync</span>
+                  <span class="bg-gray-200 px-2 py-1 rounded">AWS DynamoDB</span>
+                  <span class="bg-gray-200 px-2 py-1 rounded">AWS Step Function</span>
+                  <span class="bg-gray-200 px-2 py-1 rounded">AWS S3 Bucket</span>
+                  <span class="bg-gray-200 px-2 py-1 rounded">AWS Code Commit</span>
+                  <span class="bg-gray-200 px-2 py-1 rounded">Python</span>
+                  <span class="bg-gray-200 px-2 py-1 rounded">TypeScript</span>
+                  <span class="bg-gray-200 px-2 py-1 rounded">SQL</span>
+                  <span class="bg-gray-200 px-2 py-1 rounded">GitHub</span>
+               </div>
+               <h3 class="mt-4 font-medium">Key Achievements:</h3>
+               <ul class="list-disc list-inside text-sm mt-2">
+                  <li>High testing success rate</li>
+                  <li>Implemented automated testing framework</li>
+                  <li>Led QA team of 2 engineers</li>
+                  <li>Improved testing coverage</li>
+               </ul>
+            </div>
+            </div>
+         </section>
 
-    <!-- Job 2 -->
-    <section class="mb-12">
-      <h2 class="text-xl font-semibold">Web Designer & Developer</h2>
-      <p class="text-sm text-gray-500">Creative Digital Agency | New York, NY | 2021 - 2023</p>
-      <p class="mt-2">
-        Designed and developed responsive websites using modern web technologies. Collaborated with clients to create user-friendly interfaces and optimal user experiences.
-      </p>
-      <div class="mt-4">
-        <h3 class="font-medium">Technologies Used:</h3>
-        <div class="flex flex-wrap gap-2 mt-2 text-sm">
-          <span class="bg-gray-200 px-2 py-1 rounded">HTML5</span>
-          <span class="bg-gray-200 px-2 py-1 rounded">CSS3</span>
-          <span class="bg-gray-200 px-2 py-1 rounded">JavaScript</span>
-          <span class="bg-gray-200 px-2 py-1 rounded">Bootstrap</span>
-          <span class="bg-gray-200 px-2 py-1 rounded">Figma</span>
-          <span class="bg-gray-200 px-2 py-1 rounded">Adobe Creative Suite</span>
-        </div>
-        <h3 class="mt-4 font-medium">Key Achievements:</h3>
-        <ul class="list-disc list-inside">
-          <li>Delivered 25+ responsive websites</li>
-          <li>Improved client satisfaction scores by 40%</li>
-          <li>Reduced page load time by 50%</li>
-          <li>Implemented accessibility best practices</li>
-        </ul>
-      </div>
-    </section>
+         <!-- Job 2 -->
+         <section>
+            <div class="container mx-auto px-4 max-w-5xl py-5 text-sm leading-relaxed text-gray-700">
+            <h2 class="text-xl font-semibold">Web Designer & Developer</h2>
+            <p class="text-sm text-gray-500">EasyPos Solutions Inc. | Olongapo City, Philippines | 2020 - 2023</p>
+            <p class="mt-4 text-sm leading-relaxed">
+               Designed template websites (hero page and ordering page). Collaborated with project managers to meet client expectation in website design, theme and branding.
+            </p>
+            <div class="mt-6">
+               <h3 class="font-medium">Technologies Used:</h3>
+               <div class="flex flex-wrap gap-2 mt-2 text-sm">
+                  <span class="bg-gray-200 px-2 py-1 rounded">HTML5</span>
+                  <span class="bg-gray-200 px-2 py-1 rounded">CSS3</span>
+                  <span class="bg-gray-200 px-2 py-1 rounded">JavaScript</span>
+                  <span class="bg-gray-200 px-2 py-1 rounded">Bootstrap</span>
+                  <span class="bg-gray-200 px-2 py-1 rounded">Figma</span>
+               </div>
+               <h3 class="mt-4 font-medium">Key Achievements:</h3>
+               <ul class="list-disc list-inside text-sm mt-2">
+                  <li>Delivered 100+ websites designs</li>
+                  <li>Improved client satisfaction scores by 40%</li>
+                  <li>Adapted to modern designs</li>
+                  <li>Implemented accessibility best practices</li>
+               </ul>
+            </div>
+            </div>
+         </section>
 
-    <!-- Job 3 -->
-    <section class="mb-12">
-      <h2 class="text-xl font-semibold">Quality Assurance Engineer</h2>
-      <p class="text-sm text-gray-500">Software Innovations Inc. | Austin, TX | 2019 - 2021</p>
-      <p class="mt-2">
-        Performed comprehensive testing of web and mobile applications. Created detailed test cases, executed manual and automated tests, and collaborated with development teams to ensure quality deliverables.
+         <!-- Job 3 -->
+         <section>
+            <div class="container mx-auto px-4 max-w-5xl py-10 text-sm leading-relaxed text-gray-700">
+            <h2 class="text-xl font-semibold">Quality Assurance Engineer</h2>
+            <p class="text-sm text-gray-500">EasyPos Solutions Inc. | Olongapo City, Philippines | 2019 - 2020</p>
+            <p class="mt-4 text-sm leading-relaxed">
+               Performed manual testing for desktop application called DPos. Created test plans, executed test cases, and collaborated with developers to ensure product quality and stability.
+            </p>
+            <div class="mt-6">
+               <h3 class="font-medium">Technologies Used:</h3>
+               <div class="flex flex-wrap gap-2 mt-2 text-sm">
+                  <span class="bg-gray-200 px-2 py-1 rounded">Microsoft Excel</span>
+                  <span class="bg-gray-200 px-2 py-1 rounded">SQL</span>
+                  <span class="bg-gray-200 px-2 py-1 rounded">MySQL</span>
+                  <span class="bg-gray-200 px-2 py-1 rounded">Cloud Database</span>
+                  <span class="bg-gray-200 px-2 py-1 rounded">Postman</span>
+               </div>
+               <h3 class="mt-4 font-medium">Key Achievements:</h3>
+               <ul class="list-disc list-inside text-sm mt-2">
+                  <li>Identified and resolved 200+ bugs</li>
+                  <li>Created comprehensive test documentation</li>
+                  <li>High testing success rate</li>
+                  <li>Established QA best practices</li>
+               </ul>
+            </div>
+            </div>
+         </section>
+
+
+         <!-- Projects Section -->
+         <section class="w-full bg-blue-50">
+  <div class="container mx-auto px-4 max-w-5xl py-16 space-y-6 text-sm leading-relaxed text-gray-700" id="projects">
+    <h2 class="text-2xl font-bold mb-6 text-gray-900">Projects</h2>
+
+    <!-- DPos POS Platform -->
+    <div>
+      <h3 class="font-semibold text-blue-700">DPos POS Platform</h3>
+      <p>
+        Supported Deliverit’s touchscreen POS system designed for seamless restaurant and takeaway operations. Integrated with DoorDash, UberEATS, Menulog, and Google Food Ordering, enabling staff to manage all online orders on one screen—improving speed, accuracy, and efficiency.
+        <a href="https://deliverit.com.au/solutions/pos" target="_blank" class="text-sm text-blue-600 hover:underline">Learn more</a>
       </p>
-      <div class="mt-4">
-        <h3 class="font-medium">Technologies Used:</h3>
-        <div class="flex flex-wrap gap-2 mt-2 text-sm">
-          <span class="bg-gray-200 px-2 py-1 rounded">Selenium WebDriver</span>
-          <span class="bg-gray-200 px-2 py-1 rounded">TestNG</span>
-          <span class="bg-gray-200 px-2 py-1 rounded">Maven</span>
-          <span class="bg-gray-200 px-2 py-1 rounded">Git</span>
-          <span class="bg-gray-200 px-2 py-1 rounded">SQL</span>
-          <span class="bg-gray-200 px-2 py-1 rounded">Postman</span>
-          <span class="bg-gray-200 px-2 py-1 rounded">BrowserStack</span>
-        </div>
-        <h3 class="mt-4 font-medium">Key Achievements:</h3>
-        <ul class="list-disc list-inside">
-          <li>Identified and resolved 200+ critical bugs</li>
-          <li>Created comprehensive test documentation</li>
-          <li>Reduced testing cycle time by 30%</li>
-          <li>Established QA best practices</li>
-        </ul>
-      </div>
-    </section>
-  </main>
-</body>
+    </div>
+
+    <!-- DoorDash Marketplace -->
+    <div>
+      <h3 class="font-semibold text-blue-700">DoorDash Marketplace Integration</h3>
+      <p>
+        Developed and tested POS integrations that create a two‑way bridge between DoorDash and POS systems. Ensured automatic menu syncing, real‑time order routing, and performance tracking—all without tablets or manual input.
+        <a href="https://merchants.doordash.com/en-us/integrations" target="_blank" class="text-sm text-blue-600 hover:underline">Learn more</a>
+      </p>
+    </div>
+
+    <!-- UberEATS Marketplace -->
+    <div>
+      <h3 class="font-semibold text-blue-700">UberEATS Marketplace Integration</h3>
+      <p>
+        Implemented and validated API-driven POS integrations for UberEATS. Orders and menus synchronized directly to POS, reducing manual entry and ensuring streamlined kitchen workflows.
+        <a href="https://merchants.ubereats.com/us/en/technology/manage-orders/pos-integration/" target="_blank" class="text-sm text-blue-600 hover:underline">Learn more</a>
+      </p>
+    </div>
+
+    <!-- Google Food Ordering -->
+    <div>
+      <h3 class="font-semibold text-blue-700">Google Food Ordering Integration</h3>
+      <p>
+        Integrated Google’s “Order Now” functionality via POS/webhook solutions, so customers can place orders directly through Google Search/Maps. This reduced friction and extended reach through an organic, commission‑free channel.
+        <a href="https://support.google.com/business/answer/10842217?hl=en" target="_blank" class="text-sm text-blue-600 hover:underline">Learn more</a>
+      </p>
+    </div>
+
+    <!-- Menulog Integration -->
+    <div>
+      <h3 class="font-semibold text-blue-700">Menulog Integration</h3>
+      <p>
+        Supported two‑way order sync using middleware platforms like Deliverect—connecting Menulog orders from online to POS and back, centralizing menus and status updates seamlessly.
+        <a href="https://www.menulog.com.au/business/o/integrations/" target="_blank" class="text-sm text-blue-600 hover:underline">Learn more</a>
+      </p>
+    </div>
+
+    <!-- Oolio POS Integration -->
+    <div>
+      <h3 class="font-semibold text-blue-700">Oolio POS Integration</h3>
+      <p>
+        Built and validated async event-driven POS integration with Oolio (via webhook/API). Ensured POS responded to <code>order.requested</code> and <code>checkout.initiated</code> events within 60 seconds for a robust online ordering flow.
+        <a href="https://www.oolio.com/solutions/pos" target="_blank" class="text-sm text-blue-600 hover:underline">Learn more</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+
+         <!-- Testimonials Section -->
+         <section id="testimonials" class="pt-20 pb-10">
+            <div class="container mx-auto px-4 max-w-5xl py-16 space-y-6 text-sm leading-relaxed text-gray-700">
+            <h2 class="text-2xl font-bold mb-6 text-gray-900">Testimonials</h2>
+            <div class="space-y-6 text-sm text-gray-700">
+
+               <!-- Kuya Joms -->
+               <blockquote class="border-l-4 border-blue-500 pl-4 italic">
+                  "Vincent’s integration work with DoorDash and UberEATS into our POS platform drastically reduced manual entries and improved order accuracy."
+                  <footer class="mt-2 text-xs text-gray-500">—
+                     <a href="https://www.linkedin.com/in/jgverzosa/" target="_blank" class="text-blue-600 hover:underline">Jomar Verzosa
+                     </a>, Head of Technology, EasyPos Solutions
+                  </footer>
+               </blockquote>
+
+               <!-- Kuya R -->
+               <blockquote class="border-l-4 border-blue-500 pl-4 italic">
+                  "Thanks to Vincent’s efforts on the Google Food Ordering integration, we unlocked a whole new, commission‑free revenue channel."
+                  <footer class="mt-2 text-xs text-gray-500">—
+                     <a href="https://www.linkedin.com/in/ryan-ray-santos-54aba6a2/" target="_blank" class="text-blue-600 hover:underline">Ryan Santos                        
+                     </a>, Web Development Team Lead, EasyPos Solutions
+                  </footer>
+               </blockquote>
+
+               <!-- Hanna -->
+               <blockquote class="border-l-4 border-blue-500 pl-4 italic">
+                  "His automation of DPos POS testing boosted confidence in deployment and reduced regression cycles by over 50%."
+                  <footer class="mt-2 text-xs text-gray-500">—
+                     <a href="https://www.linkedin.com/in/hanna-hilario/" target="_blank" class="text-blue-600 hover:underline">Hanna Hilario                        
+                     </a>, POD Leader | Senior Software Quality Assurance Engineer
+                  </footer>
+               </blockquote>
+
+               <!-- Julianne -->
+               <blockquote class="border-l-4 border-blue-500 pl-4 italic">
+                  "His automation of DPos POS testing boosted confidence in deployment and reduced regression cycles by over 50%."
+                  <footer class="mt-2 text-xs text-gray-500">—
+                     <a href="https://www.linkedin.com/in/ryan-ray-santos-54aba6a2/" target="_blank" class="text-blue-600 hover:underline">Julianne Franco                     
+                     </a>, Senior Software Quality Assurance Engineer
+                  </footer>
+               </blockquote>
+
+               <!-- Julianne -->
+               <blockquote class="border-l-4 border-blue-500 pl-4 italic">
+                  "His automation of DPos POS testing boosted confidence in deployment and reduced regression cycles by over 50%."
+                  <footer class="mt-2 text-xs text-gray-500">—
+                     <a href="https://www.linkedin.com/in/ryan-ray-santos-54aba6a2/" target="_blank" class="text-blue-600 hover:underline">Jazpen Madriaga                     
+                     </a>, Senior Developer
+                  </footer>
+               </blockquote>
+            </div>
+            </div>
+         </section>
+
+         <!-- Footer Call-to-Action -->
+      <section class="py-16 bg-blue-100 text-center">
+         <h2 class="text-2xl font-bold mb-2">Ready to Work Together?</h2>
+         <p class="mb-6 text-gray-600 max-w-xl mx-auto">
+            I'm always interested in new opportunities and collaborations. Let’s discuss how we can bring your vision to life.
+         </p>
+         <a href="contact.html" class="bg-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700">
+         Get In Touch
+         </a>
+      </section>
+
+
+   </body>
 </html>

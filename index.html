@@ -1,95 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>QA Engineer Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body class="bg-gradient-to-b from-blue-200 to-white text-gray-800 font-sans">
-    <!-- Navbar -->
-    <header class="bg-white shadow sticky top-0 z-50">
-      <div class="container mx-auto flex justify-between items-center py-4 px-6">
-        <h1 class="text-xl font-bold text-blue-600">Portfolio</h1>
-        <nav class="space-x-6 hidden md:flex">
-          <a href="home.html" class="text-sm font-medium hover:text-blue-500">Home</a>
-          <a href="work-experience.html" class="text-sm font-medium hover:text-blue-500">Work Experience</a>
-          <a href="gallery.html" class="text-sm font-medium hover:text-blue-500">Gallery</a>
-          <a href="social-media.html" class="text-sm font-medium hover:text-blue-500">Social Media</a>
-          <a href="contact.html" class="text-sm font-medium hover:text-blue-500">Contact</a>
-        </nav>
-      </div>
-    </header>
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>QA Engineer Portfolio</title>
+      <script src="https://cdn.tailwindcss.com"></script>
+   </head>
+   <body class="bg-gradient-to-b from-blue-200 to-white text-gray-800 font-sans">
+      <!-- Navbar -->
+      <header class="bg-white shadow sticky top-0 z-50">
+         <div class="container mx-auto flex justify-between items-center py-4 px-6">
+            <!-- Logo instead of Portfolio text -->
+            <a href="index.html">
+            <img src="images/cv_logo.png" alt="Portfolio Logo" class="h-8 w-auto">
+            </a>
+            <!-- Navigation -->
+            <nav class="hidden md:flex space-x-6 items-center">
+               <!-- nav of home -->
+               <div class="relative group">
+                  <a href="index.html" class="text-sm font-medium hover:text-blue-500 inline-flex items-center px-1 py-2">
+                     Home
+                     <svg class="w-2.5 h-2.5 ml-1 text-gray-500 group-hover:text-blue-500 transition-colors duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 18">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                     </svg>
+                  </a>
+                  <div class="absolute left-0 mt-2 w-40 bg-white border border-gray-200 shadow-lg rounded-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 group-hover:translate-y-0 translate-y-2 z-10">
+                     <a href="index.html#about" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">About Me</a>
+                     <a href="index.html#technologies" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Technologies</a>
+                     <a href="index.html#tech-skills" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Technical Skills</a>
+                     <a href="index.html#analytical-skills" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Analytical & Strategic Skills</a>
+                     <a href="index.html#collaborationncomunnication" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Collaboration & Communication</a>
+                     <a href="index.html#soft-skills" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Soft Skills</a>
+                  </div>
+               </div>
+               
+               <!-- nav of work experience -->
+               <div class="relative group">
+                  <a href="work-experience.html" class="text-sm font-medium hover:text-blue-500 inline-flex items-center px-1 py-2">Work Experience
+                     <svg class="w-2.5 h-2.5 ml-1 text-gray-500 group-hover:text-blue-500 transition-colors duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 18">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                     </svg>
+                  </a>
+                  <div class="absolute left-0 mt-2 w-40 bg-white border border-gray-200 shadow-lg rounded-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 group-hover:translate-y-0 translate-y-2 z-10">
+                     <a href="work-experience.html#projects" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Projects</a>
+                     <a href="work-experience.html#testimonials" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Testimonials / Character Reference</a>
+                  </div>
+               </div>
+               <a href="certifications_n_trainings.html" class="text-sm font-medium hover:text-blue-500 px-1 py-2">Certifications and Trainings</a>
+               <a href="social-media.html" class="text-sm font-medium hover:text-blue-500 px-1 py-2">Social Media</a>
+               <a href="contact.html" class="text-sm font-medium hover:text-blue-500 px-1 py-2">Contact</a>
+            </nav>
+         </div>
+      </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="flex flex-col justify-center items-center text-center py-20 px-4 bg-blue-100">
-      <h2 class="text-4xl font-bold">Hello, I'm</h2>
-      <h1 class="text-5xl font-extrabold text-blue-700 mt-2">QA Engineer</h1>
-      <p class="mt-4 max-w-xl text-gray-600">
-        A passionate Quality Assurance Engineer ensuring exceptional digital experiences through comprehensive testing and quality automation.
-      </p>
-      <div class="mt-6 flex flex-col sm:flex-row gap-4">
-        <button class="bg-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700">View My Work</button>
-        <a href="summary.pdf" download class="bg-white border border-blue-600 text-blue-600 px-6 py-2 rounded shadow hover:bg-blue-100">
-          Download Resume
-        </a>
-      </div>
-    </section>
+<!-- Hero Section -->
+<section id="home" class="flex flex-col md:flex-row min-h-screen bg-white text-gray-800">
+    <!-- Left Side -->
+    <div class="w-full md:w-1/2 relative">
+        <img src="images/vincent.jpg" alt="Vincent QA Engineer"
+             class="w-full h-full object-cover rounded-none md:rounded-r-3xl shadow-xl" />
+        <div class="absolute inset-0"></div>
+    </div>
 
-    <!-- About Me Section -->
-    <section class="py-16 bg-white" id="about">
-      <div class="container mx-auto px-4 max-w-5xl">
-        <h2 class="text-2xl font-bold mb-4">About Me</h2>
-        <p class="mb-6 text-gray-700">
-          I'm a dedicated Quality Assurance Engineer with a passion for ensuring exceptional digital experiences. With years of experience in both manual and automated testing, I bring meticulous attention to detail, technical expertise, and strategic thinking to every project.
+    <!-- Right Side -->
+    <div class="w-full md:w-1/2 flex flex-col justify-center items-start px-10 py-16 space-y-6">
+        <h1 class="text-5xl font-extrabold leading-tight text-gray-900">Hello, I'm Vincent</h1>
+        <h2 class="text-3xl font-semibold text-blue-700">QA Engineer</h2>
+        <p class="text-lg text-gray-700 leading-relaxed">
+            I’m a passionate Quality Assurance Engineer focused on delivering flawless digital experiences.
+            I specialize in thorough testing and smart automation to help create products users truly trust.
         </p>
-        <p class="mb-4 text-gray-700">
-          My approach combines comprehensive testing methodologies with innovative automation solutions, ensuring that every application not only meets but exceeds quality standards.
+        <div class="mt-4 flex flex-col sm:flex-row gap-4">
+            <a href="work-experience.html" target="_blank"
+               class="bg-blue-700 text-white px-6 py-2 rounded-xl shadow-md hover:bg-blue-800 transition">
+                View My Work
+            </a>
+            <a href="vincent_resume.pdf" download
+               class="border border-blue-700 text-blue-700 px-6 py-2 rounded-xl shadow-md hover:bg-blue-700 hover:text-white transition">
+                Download Resume
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+      <!-- About Me Section -->
+      <section class="py-20 bg-white" id="about">
+    <div class="container mx-auto px-4 max-w-5xl">
+        <h2 class="text-3xl font-extrabold text-gray-900 mb-4">About Me</h2>
+        <p class="text-gray-700 leading-relaxed mb-6">
+            I’m a dedicated Quality Assurance Engineer passionate about delivering exceptional digital experiences. I bring sharp attention to detail, deep technical insight, and a strategic mindset to every project.
         </p>
-        <div class="flex flex-wrap gap-2 text-sm">
-          <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Test Automation</span>
-          <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Quality Assurance</span>
-          <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Bug Detection</span>
-          <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Team Leadership</span>
-        </div>
-      </div>
-    </section>
+        <p class="text-gray-700 leading-relaxed mb-6">
+            Over the past 3 years, I’ve built expertise in both manual and automated testing. I spent more than 2 years mastering manual testing—uncovering edge cases, digging deep into details, and ensuring flawless functionality. Recently, I’ve shifted focus to automation, helping teams move faster while maintaining high standards.
+        </p>
+        <p class="text-gray-700 leading-relaxed mb-6">
+            I’ve worked hands-on with platforms like Deliverit, Oolio, DoorDash, UberEATS, Menulog, and Google Food Ordering, making sure each one hits peak performance and reliability benchmarks.
+        </p>
+        <p class="text-gray-700 leading-relaxed mb-8">
+            My process combines end-to-end testing strategies with modern automation tools to deliver software that exceeds expectations. Whether it's hunting elusive bugs or building scalable test suites, I’m committed to quality at every step.
+        </p>
 
-    <!-- Quick Stats -->
-    <section class="py-12 bg-blue-50">
-      <div class="container mx-auto px-4 max-w-4xl grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
-        <div>
-          <p class="text-3xl font-bold text-blue-700">5+</p>
-          <p class="text-sm">Years in QA</p>
+        <div class="flex flex-wrap gap-3 text-sm">
+            <span class="bg-blue-100 text-blue-700 px-4 py-1 rounded-full font-medium">Test Automation</span>
+            <span class="bg-blue-100 text-blue-700 px-4 py-1 rounded-full font-medium">Quality Assurance</span>
+            <span class="bg-blue-100 text-blue-700 px-4 py-1 rounded-full font-medium">Bug Detection</span>
+            <span class="bg-blue-100 text-blue-700 px-4 py-1 rounded-full font-medium">Team Collaboration</span>
         </div>
-        <div>
-          <p class="text-3xl font-bold text-blue-700">500+</p>
-          <p class="text-sm">Bugs Found & Fixed</p>
-        </div>
-        <div>
-          <p class="text-3xl font-bold text-blue-700">1000+</p>
-          <p class="text-sm">Test Cases Written</p>
-        </div>
-        <div>
-          <p class="text-3xl font-bold text-blue-700">8+</p>
-          <p class="text-sm">QA Certifications</p>
-        </div>
-      </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer Call-to-Action -->
-    <section class="py-16 bg-white text-center">
-      <h2 class="text-2xl font-bold mb-2">Ready to Work Together?</h2>
-      <p class="mb-6 text-gray-600 max-w-xl mx-auto">
-        I'm always interested in new opportunities and collaborations. Let’s discuss how we can bring your vision to life.
-      </p>
-      <a href="#contact" class="bg-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700">
-        Get In Touch
-      </a>
-    </section>
+      <!-- Technologies -->
+      <section class="py-20 bg-blue-50" id="technologies">
+    <div class="container mx-auto px-4 max-w-5xl">
+        <h2 class="text-3xl font-extrabold text-gray-900 mb-2">Technologies Acquired</h2>
+        <p class="text-gray-700 mb-8">
+            These are the tools and platforms I’ve mastered throughout my QA journey—ranging from automation to DevOps and cloud services.
+        </p>
 
-    <script>
-      // Additional interactivity/scripts can go here
-    </script>
-  </body>
+        <!-- Categories -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-sm">
+            <!-- Testing Tools -->
+            <div>
+                <h3 class="font-semibold text-gray-900 mb-2">Testing & Automation</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Playwright</span>
+                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Selenium</span>
+                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Postman</span>
+                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">SelectorsHub</span>
+                </div>
+            </div>
+
+            <!-- Cloud Services -->
+            <div>
+                <h3 class="font-semibold text-gray-900 mb-2">AWS & Cloud</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">AWS Lambda</span>
+                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">AWS S3</span>
+                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">AWS CloudWatch</span>
+                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">AWS Step Function</span>
+                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">AWS AppSync</span>
+                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">AWS DynamoDB</span>
+                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">AWS CodeCommit</span>
+                </div>
+            </div>
+
+            <!-- DevOps & Other Tools -->
+            <div>
+                <h3 class="font-semibold text-gray-900 mb-2">DevOps & Utilities</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Jenkins</span>
+                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Ngrok</span>
+                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">GitHub</span>
+                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">SQL</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+      <!-- Technical Testing Skills -->
+      <section class="py-12 bg-white" id="tech-skills">
+         <div class="container mx-auto px-4 max-w-5xl">
+            <h2 class="text-3xl font-extrabold text-gray-900 mb-2">Technical Testing Skills</h2>
+            <div class="flex flex-wrap gap-2 text-sm">
+               <ul class="list-disc list-inside">
+                  <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Test Planning & Strategy</span> – I create clear test plans that outline what we’re testing, why, and how.</li>
+                  <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Manual Testing Expertise</span> – Hands-on experience with exploratory, regression, smoke, sanity, and UAT testing.</li>
+                  <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Automation Testing</span> – Comfortable using tools like Selenium, Playwright, Cypress, and similar.</li>
+                  <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">API Testing</span> – Skilled in testing APIs using Postman, REST Assured, or similar tools.</li>
+                  <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Performance & Load Testing</span> – Familiar with tools like JMeter and Postman for load and stress testing.</li>
+                  <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">CI/CD Integration</span> – Know how to plug tests into CI/CD pipelines with Jenkins, GitHub Actions, or GitLab CI.</li>
+                  <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Version Control</span> – Solid understanding of Git and how to work with it efficiently.</li>
+               </ul>
+            </div>
+         </div>
+      </section>
+      <!-- Analytical & Strategic Skills -->
+      <section class="py-12 bg-white-50" id="analytical-skills">
+         <div class="container mx-auto px-4 max-w-5xl">
+         <h2 class="text-3xl font-extrabold text-gray-900 mb-2">Analytical & Strategic Skills</h2>
+         <div class="flex flex-wrap gap-2 text-sm">
+            <ul class="list-disc list-inside">
+               <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Root Cause Analysis</span> – Going beyond the surface to understand and explain issues clearly.</li>
+               <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Risk-Based Testing</span> – Prioritizing testing efforts based on impact and likelihood.</li>
+               <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Data Analysis</span> – Using logs, monitoring tools, and metrics to guide quality decisions</li>
+            </ul>
+         </div>
+      </section>
+      <!-- Collaboration & Communication -->
+      <section class="py-12 bg-white" id="collaborationncomunnication">
+         <div class="container mx-auto px-4 max-w-5xl">
+            <h2 class="text-3xl font-extrabold text-gray-900 mb-2">Collaboration & Communication</h2>
+            <div class="flex flex-wrap gap-2 text-sm">
+               <ul class="list-disc list-inside">
+                  <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Team Collaboration</span> – I work closely with devs, product managers, and designers to catch issues early.</li>
+                  <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Clear Reporting & Documentation</span> – I keep things simple and clear, whether it’s bug reports, tickets, or documentation, so everyone’s on the same page.</li>
+                  <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Sharing Test Result</span> – I communicate test outcomes and risks in a way that makes sense to both tech and non-tech teams.</li>
+                  <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Feedback Culture</span> – I give and take feedback to help improve the product and how we work.</li>
+                  <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Mentoring</span> – I support junior QAs and share what I’ve learned along the way.</li>
+                  <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Requirement Clarification</span> – I ask the right questions to make sure we’re testing the right things.</li>
+                  <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Proactive Updates</span> – I keep the team in the loop about testing progress, blockers, and changes.</li>
+               </ul>
+            </div>
+         </div>
+      </section>
+      <!-- Soft Skill -->
+      <section class="py-12 bg-white-50" id="soft-skills">
+         <div class="container mx-auto px-4 max-w-5xl">
+            <h2 class="text-3xl font-extrabold text-gray-900 mb-2">Soft Skills</h2>
+            <div class="flex flex-wrap gap-2 text-sm">
+               <ul class="list-disc list-inside">
+                  <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Critical Thinking</span> – Asking the right questions, challenging assumptions.</li>
+                  <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Proactive Attitude</span> – Identifying potential issues before they happen.</li>
+                  <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Adaptability</span> – Learning new tools, adjusting to new workflows quickly.</li>
+                  <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Ownership</span> – Driving quality forward across the product lifecycle.</li>
+               </ul>
+            </div>
+         </div>
+      </section>
+      <!-- Quick Stats -->
+      <section class="py-12 bg-white">
+         <div class="container mx-auto px-4 max-w-4xl grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+            <div>
+               <p class="text-3xl font-bold text-blue-700">3+</p>
+               <p class="text-sm">Years in QA</p>
+            </div>
+            <div>
+               <p class="text-3xl font-bold text-blue-700">2000+</p>
+               <p class="text-sm">Test Cases Written</p>
+            </div>
+            <div>
+               <p class="text-3xl font-bold text-blue-700">10</p>
+               <p class="text-sm">Testing Tools</p>
+            </div>
+            <div>
+               <p class="text-3xl font-bold text-blue-700">200+</p>
+               <p class="text-sm">Bugs Found & Fixed</p>
+            </div>   
+         </div>
+      </section>
+      <!-- Footer Call-to-Action -->
+      <section class="py-16 bg-blue-100 text-center">
+         <h2 class="text-2xl font-bold mb-2">Ready to Work Together?</h2>
+         <p class="mb-6 text-gray-600 max-w-xl mx-auto">
+            I'm always interested in new opportunities and collaborations. Let’s discuss how we can bring your vision to life.
+         </p>
+         <a href="contact.html" class="bg-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700">
+         Get In Touch
+         </a>
+      </section>
+      <!-- scroll spy -->
+       <button id="backToTop" class="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hidden hover:bg-blue-700 transition">
+  ↑
+</button>
+
+<script>
+  const btn = document.getElementById("backToTop");
+  window.addEventListener("scroll", () => {
+    btn.style.display = window.scrollY > 300 ? "block" : "none";
+  });
+  btn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+
+      <script>
+         // Additional interactivity/scripts can go here
+      </script>
+   </body>
 </html>

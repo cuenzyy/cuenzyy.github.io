@@ -1,102 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact - QA Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body class="bg-white text-gray-800">
-    <header class="bg-white shadow sticky top-0 z-50">
-      <div class="container mx-auto flex justify-between items-center py-4 px-6">
-        <h1 class="text-xl font-bold text-blue-600">Portfolio</h1>
-        <nav class="space-x-6 hidden md:flex">
-          <a href="home.html" class="text-sm font-medium hover:text-blue-500">Home</a>
-          <a href="work-experience.html" class="text-sm font-medium hover:text-blue-500">Work Experience</a>
-          <a href="gallery.html" class="text-sm font-medium hover:text-blue-500">Gallery</a>
-          <a href="social-media.html" class="text-sm font-medium hover:text-blue-500">Social Media</a>
-          <a href="contact.html" class="text-sm font-medium hover:text-blue-500">Contact</a>
-        </nav>
-      </div>
-    </header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Contact - QA Portfolio</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+        <script>
+            (function () {
+                emailjs.init("BY5VIDGwGMX3mwA1e"); // Replace with your public key
+            })();
+        </script>
+    </head>
+    <body class="bg-white text-gray-800">
+        <header class="bg-white shadow sticky top-0 z-50">
+         <div class="container mx-auto flex justify-between items-center py-4 px-6">
+            <!-- Logo instead of Portfolio text -->
+            <a href="index.html">
+            <img src="images/cv_logo.png" alt="Portfolio Logo" class="h-8 w-auto">
+            </a>
+            <!-- Navigation -->
+            <nav class="hidden md:flex space-x-6 items-center">
+               <!-- nav of home -->
+               <div class="relative group">
+                  <a href="index.html" class="text-sm font-medium hover:text-blue-500 inline-flex items-center px-1 py-2">
+                     Home
+                     <svg class="w-2.5 h-2.5 ml-1 text-gray-500 group-hover:text-blue-500 transition-colors duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 18">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                     </svg>
+                  </a>
+                  <div class="absolute left-0 mt-2 w-40 bg-white border border-gray-200 shadow-lg rounded-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 group-hover:translate-y-0 translate-y-2 z-10">
+                     <a href="index.html#about" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">About Me</a>
+                     <a href="index.html#technologies" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Technologies</a>
+                     <a href="index.html#tech-skills" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Technical Skills</a>
+                     <a href="index.html#analytical-skills" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Analytical & Strategic Skills</a>
+                     <a href="index.html#collaborationncomunnication" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Collaboration & Communication</a>
+                     <a href="index.html#soft-skills" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Soft Skills</a>
+                  </div>
+               </div>
+               
+               <!-- nav of work experience -->
+               <div class="relative group">
+                  <a href="work-experience.html" class="text-sm font-medium hover:text-blue-500 inline-flex items-center px-1 py-2">Work Experience
+                     <svg class="w-2.5 h-2.5 ml-1 text-gray-500 group-hover:text-blue-500 transition-colors duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 18">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                     </svg>
+                  </a>
+                  <div class="absolute left-0 mt-2 w-40 bg-white border border-gray-200 shadow-lg rounded-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 group-hover:translate-y-0 translate-y-2 z-10">
+                     <a href="work-experience.html#projects" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Projects</a>
+                     <a href="work-experience.html#testimonials" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Testimonials / Character Reference</a>
+                  </div>
+               </div>
+               <a href="certifications_n_trainings.html" class="text-sm font-medium hover:text-blue-500 px-1 py-2">Certifications and Trainings</a>
+               <a href="social-media.html" class="text-sm font-medium hover:text-blue-500 px-1 py-2">Social Media</a>
+               <a href="contact.html" class="text-sm font-medium hover:text-blue-500 px-1 py-2">Contact</a>
+            </nav>
+         </div>
+      </header>
 
-    <section class="bg-gradient-to-b from-blue-500 to-blue-400 py-20 text-white text-center">
-      <h2 class="text-4xl font-bold mb-2">Get In Touch</h2>
-      <p class="max-w-xl mx-auto">Ready to start a conversation? I'd love to hear from you. Send me a message and I’ll respond as soon as possible.</p>
-    </section>
+        <section class="bg-gradient-to-b from-blue-500 to-blue-400 py-20 text-white text-center">
+            <h2 class="text-4xl font-bold mb-2">Get In Touch</h2>
+            <p class="max-w-xl mx-auto">Ready to start a conversation? I'd love to hear from you. Send me a message and I’ll respond as soon as possible.</p>
+        </section>
 
-    <section class="max-w-6xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-8">
-      <!-- Form -->
-      <div>
-        <h3 class="text-lg font-semibold mb-4">Send Message</h3>
-        <p class="text-sm text-gray-500 mb-6">Fill out the form below and I’ll get back to you as soon as possible.</p>
-        <form class="space-y-4">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <input type="text" placeholder="Full Name" class="w-full border px-4 py-2 rounded" />
-            <input type="email" placeholder="Email" class="w-full border px-4 py-2 rounded" />
-          </div>
-          <input type="text" placeholder="Subject" class="w-full border px-4 py-2 rounded" />
-          <textarea placeholder="Message" rows="4" class="w-full border px-4 py-2 rounded"></textarea>
-          <button class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">Send Message</button>
-        </form>
-      </div>
+        <section class="max-w-6xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-8">
+            <!-- Form -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Send Me a Message</h3>
+                <p class="text-sm text-gray-500 mb-6">Fill out the form below and I’ll get back to you as soon as possible.</p>
+                <form id="contact-form" class="space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <input type="text" name="name" placeholder="Full Name" class="w-full border px-4 py-2 rounded" required />
+                        <input type="email" name="email" placeholder="Email" class="w-full border px-4 py-2 rounded" required />
+                    </div>
+                    <input type="text" name="title" placeholder="Subject" class="w-full border px-4 py-2 rounded" required />
+                    <textarea name="message" placeholder="Message" rows="4" class="w-full border px-4 py-2 rounded" required></textarea>
+                    <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">Send Message</button>
+                </form>
+            </div>
 
-      <!-- Contact Info -->
-      <div>
-        <h3 class="text-lg font-semibold mb-4">Contact Information</h3>
-        <p class="text-sm text-gray-500 mb-6">I'm always interested in new opportunities, whether you're a company looking to hire, a fellow developer interested in collaboration, or someone who just wants to connect.</p>
+            <!-- Contact Info -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Contact Information</h3>
+                <p class="text-sm text-gray-500 mb-6">These are my current contact information:</p>
 
-        <div class="space-y-4">
-          <div class="border p-4 rounded">
-            <p class="font-semibold text-sm">Email</p>
-            <p class="text-sm text-blue-600">your.email@example.com</p>
-          </div>
-          <div class="border p-4 rounded">
-            <p class="font-semibold text-sm">Phone</p>
-            <p class="text-sm text-blue-600">+1 (555) 123-4567</p>
-            <p class="text-xs text-gray-500">Available Mon-Fri 9AM-6PM</p>
-          </div>
-          <div class="border p-4 rounded">
-            <p class="font-semibold text-sm">Location</p>
-            <p class="text-sm text-blue-600">San Francisco, CA</p>
-            <p class="text-xs text-gray-500">Open to remote opportunities</p>
-          </div>
-          <div class="border p-4 rounded">
-            <p class="font-semibold text-sm">Response Time</p>
-            <p class="text-sm text-blue-600">Within 24 hours</p>
-            <p class="text-xs text-gray-500">Usually much faster</p>
-          </div>
-          <div class="border p-4 rounded bg-green-50">
-            <p class="font-semibold text-sm text-green-700">Currently Available</p>
-            <p class="text-xs text-gray-600">I'm open to new opportunities and collaborations. Whether you're looking for a full-time position, freelance work, or just want to discuss a project, I’d love to hear from you.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+                <div class="space-y-4">
+                    <div class="border p-4 rounded">
+                        <p class="font-semibold text-sm">Email</p>
+                        <a href="#" class="text-sm text-blue-600">vincentcuenza.official@gmail.com</a>
+                    </div>
+                    <div class="border p-4 rounded">
+                        <p class="font-semibold text-sm">Phone</p>
+                        <a href="tel:+639813290633" class="text-sm text-blue-600">(+639)813290633</a>
+                        <p class="text-xs text-gray-500">Available Mon-Fri 9AM-6PM UTC +8</p>
+                    </div>
+                    <div class="border p-4 rounded">
+                        <p class="font-semibold text-sm">Location</p>
+                        <p class="text-sm text-blue-600">Olongapo, Philippines</p>
+                        <p class="text-xs text-gray-500">Open to remote opportunities</p>
+                    </div>
+                    <div class="border p-4 rounded">
+                        <p class="font-semibold text-sm">Response Time</p>
+                        <p class="text-sm text-blue-600">Within 24 hours</p>
+                        <p class="text-xs text-gray-500">Usually much faster</p>
+                    </div>
+                    <div class="border p-4 rounded bg-green-50">
+                        <p class="font-semibold text-sm text-green-700">Open to new opportunities while currently employed.</p>
+                        <p class="text-xs text-gray-600">I'm open to new opportunities and collaborations. Whether you're looking for a full-time position, freelance work, or just want to finish a project, I’d love to hear from you.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section class="bg-gray-50 py-16">
-      <div class="max-w-5xl mx-auto px-4 text-center">
-        <h3 class="text-xl font-bold mb-6">Frequently Asked Questions</h3>
-        <p class="text-sm text-gray-600 mb-8">Quick answers to common questions about working with me</p>
-        <div class="grid md:grid-cols-2 gap-6 text-left">
-          <div class="bg-white p-6 rounded shadow">
-            <p class="font-medium mb-2">What's your typical response time?</p>
-            <p class="text-sm text-gray-600">I usually respond within 24 hours, often much faster during business hours.</p>
-          </div>
-          <div class="bg-white p-6 rounded shadow">
-            <p class="font-medium mb-2">Are you available for remote work?</p>
-            <p class="text-sm text-gray-600">Yes! I’m fully set up for remote work and have experience with distributed teams.</p>
-          </div>
-          <div class="bg-white p-6 rounded shadow">
-            <p class="font-medium mb-2">What type of projects interest you?</p>
-            <p class="text-sm text-gray-600">I'm particularly interested in web applications, cloud solutions, and innovative tech projects.</p>
-          </div>
-          <div class="bg-white p-6 rounded shadow">
-            <p class="font-medium mb-2">Do you offer consulting services?</p>
-            <p class="text-sm text-gray-600">Yes, I provide consulting for architecture, code reviews, and technical strategy.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </body>
+        <section class="bg-gray-50 py-16">
+            <div class="max-w-5xl mx-auto px-4 text-center">
+                <h3 class="text-xl font-bold mb-6">Frequently Asked Questions</h3>
+                <p class="text-sm text-gray-600 mb-8">Quick answers to common questions about working with me</p>
+                <div class="grid md:grid-cols-2 gap-6 text-left">
+                    <div class="bg-white p-6 rounded shadow">
+                        <p class="font-medium mb-2">What's your typical response time?</p>
+                        <p class="text-sm text-gray-600">I usually respond within 24 hours, often much faster during business hours.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded shadow">
+                        <p class="font-medium mb-2">Are you available for remote work?</p>
+                        <p class="text-sm text-gray-600">Yes! I’m fully set up for remote work.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded shadow">
+                        <p class="font-medium mb-2">What type of projects interest you?</p>
+                        <p class="text-sm text-gray-600">I'm particularly interested in web applications, cloud solutions, and innovative tech projects.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded shadow">
+                        <p class="font-medium mb-2">Are you able to start working with us right away?</p>
+                        <p class="text-sm text-gray-600">No, I am currently employed, please give me two weeks at least to render and delegate my responbilities to my co-workers properly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            document.getElementById("contact-form").addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                emailjs.sendForm("service_y2rbc4j", "template_gclqylb", this).then(
+                    function () {
+                        alert("Message sent successfully!");
+                    },
+                    function (error) {
+                        alert("Failed to send message. Error: " + error);
+                    }
+                );
+            });
+        </script>
+    </body>
 </html>
