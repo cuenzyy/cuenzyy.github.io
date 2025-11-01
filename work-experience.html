@@ -67,7 +67,7 @@
             <p class="text-sm text-gray-500">EasyPos Solutions Inc. | Olongapo City, Philippines | 2023 - Present</p>
             <div class="mt-4 space-y-4 text-sm leading-relaxed">
                <p>Previously, I was a standalone QA for integrated partners (UberEATS, DoorDash, Menulog & Google Food Ordering). Later, these platforms were merged into our upgraded application called 
-                  <span class="relative group inline-block text-blue-600 cursor-pointer">STUDIO
+                  <span class="relative group inline-block text-blue-600 cursor-pointer"><a href="https://deliverit.com.au/studio" target="_blank">STUDIO</a>
                   <span class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block w-56 text-xs text-white bg-black p-2 rounded">
                   STUDIO is a product by Deliverit. It’s their cloud-based platform designed to help restaurants manage their digital storefronts, delivery settings, menus, promotions, and integrations with third-party services like Uber Eats and DoorDash—all from one place.</span>
                   </span>. I collaborated closely with QA teammates and developers to deliver a seamless STUDIO experience.
@@ -92,7 +92,7 @@
                         <span x-show="show" x-transition class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-black text-white text-xs p-4 rounded-lg z-50 flex flex-col items-center space-y-3 border border-white shadow-lg" style="display: none;">
                            <span class="flex items-center space-x-3">
                               <img src="images/Julianne.jpg" alt="Julianne" class="w-10 h-10 rounded-full object-cover border border-white">
-                              <span class="text-white">Julianne Franco</span>
+                              <a href="https://www.linkedin.com/in/julianne-franco-50b7b2394" target="_blank" class="underline text-blue-300">Julianne Franco</a>
                            </span>
                            <span class="text-center pt-2">Senior Software Quality Assurance Engineer | Beginner in Automation Testing</span>
                         </span>
@@ -341,6 +341,19 @@
          Get In Touch
          </a>
       </section>
+
+      <!-- scroll spy -->
+         <button id="backToTop" class="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hidden hover:bg-blue-700 transition">↑</button>
+
+   <script>
+   const btn = document.getElementById("backToTop");
+   window.addEventListener("scroll", () => {
+      btn.style.display = window.scrollY > 300 ? "block" : "none";
+   });
+   btn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+   });
+   </script>
 
 
    </body>

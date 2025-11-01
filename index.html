@@ -253,20 +253,19 @@
          Get In Touch
          </a>
       </section>
-      <!-- scroll spy -->
-       <button id="backToTop" class="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hidden hover:bg-blue-700 transition">
-  ↑
-</button>
 
-<script>
-  const btn = document.getElementById("backToTop");
-  window.addEventListener("scroll", () => {
-    btn.style.display = window.scrollY > 300 ? "block" : "none";
-  });
-  btn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-</script>
+      <!-- scroll spy -->
+       <button id="backToTop" class="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hidden hover:bg-blue-700 transition">↑</button>
+
+      <script>
+         const btn = document.getElementById("backToTop");
+         window.addEventListener("scroll", () => {
+            btn.style.display = window.scrollY > 300 ? "block" : "none";
+         });
+         btn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+      </script>
 
       <script>
          // Additional interactivity/scripts can go here
