@@ -83,10 +83,10 @@
             </div>
             <!-- Buttons -->
             <div class="mt-auto pt-4 flex justify-center gap-3">
-               <button id="istqbViewCertBtn" class="px-4 py-1.5 border border-blue-500 text-blue-500 text-sm rounded-md hover:bg-blue-50 transition font-medium">
+               <button id="istqbViewCertBtn" class="px-4 py-1.5 border border-blue-500 text-blue-500 text-sm rounded-md hover:bg-blue-50 transition font-medium cursor-not-allowed" disabled>
                View Certificate
                </button>
-               <button id="istqbVerifyCertBtn" class="px-4 py-1.5 border border-blue-500 text-blue-500 text-sm rounded-md hover:bg-blue-50 transition font-medium">
+               <button id="istqbVerifyCertBtn" class="px-4 py-1.5 border border-blue-500 text-blue-500 text-sm rounded-md hover:bg-blue-50 transition font-medium cursor-not-allowed" disabled>
                Verify Certificate
                </button>
             </div>
@@ -199,10 +199,10 @@
             </div>
             <!-- Buttons -->
             <div class="mt-auto pt-4 flex justify-center gap-3">
-               <button id="awsViewCertBtn" class="px-4 py-1.5 border border-blue-500 text-blue-500 text-sm rounded-md hover:bg-blue-50 transition font-medium">
+               <button id="awsViewCertBtn" class="px-4 py-1.5 border border-blue-500 text-blue-500 text-sm rounded-md hover:bg-blue-50 transition font-medium cursor-not-allowed" disabled>
                View Certificate
                </button>
-               <button id="awsVerifyCertBtn" class="px-4 py-1.5 border border-blue-500 text-blue-500 text-sm rounded-md hover:bg-blue-50 transition font-medium">
+               <button id="awsVerifyCertBtn" class="px-4 py-1.5 border border-blue-500 text-blue-500 text-sm rounded-md hover:bg-blue-50 transition font-medium cursor-not-allowed" disabled>
                Verify Certificate
                </button>
             </div>
@@ -251,6 +251,19 @@
     </div>
   </div>
 </div>
+
+      <!-- scroll spy -->
+       <button id="backToTop" class="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hidden hover:bg-blue-700 transition">↑</button>
+
+      <script>
+         const btn = document.getElementById("backToTop");
+         window.addEventListener("scroll", () => {
+            btn.style.display = window.scrollY > 300 ? "block" : "none";
+         });
+         btn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+      </script>
 
       <script>
   // Utility function to show modal
