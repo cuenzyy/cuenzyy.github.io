@@ -75,7 +75,49 @@
                     </div>
                     <input type="text" name="title" placeholder="Subject" class="w-full border px-4 py-2 rounded" required />
                     <textarea name="message" placeholder="Message" rows="4" class="w-full border px-4 py-2 rounded" required></textarea>
-                    <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">Send Message</button>
+                    <button id="sendBtn" type="submit" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">Send Message</button>
+
+                    <!-- Fullscreen Loader Modal (no blur) -->
+<div id="pageLoader" class="fixed inset-0 bg-gray-800 bg-opacity-20 flex items-center justify-center hidden z-50">
+    <div class="bg-white rounded-lg shadow-lg px-10 py-6 w-80 text-center">
+        <p class="text-gray-700 font-medium mb-4">Processing message...</p>
+
+        <!-- Animated striped progress bar -->
+        <div class="w-full h-3 rounded bg-gray-200 overflow-hidden">
+            <div class="h-full w-0 bg-blue-600 animate-loadingStripe"></div>            
+        </div>
+    </div>
+</div>
+
+<style>
+@keyframes loadingStripe {
+    0% {
+        width: 0%;
+        background-position: 0 0;
+    }
+    50% {
+        width: 80%;
+    }
+    100% {
+        width: 100%;
+        background-position: 40px 0;
+    }
+}
+
+.animate-loadingStripe {
+    animation: loadingStripe 1.5s linear infinite;
+    background-size: 40px 40px;
+    background-image: repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.35) 0,
+        rgba(255, 255, 255, 0.35) 10px,
+        rgba(0, 0, 0, 0.05) 10px,
+        rgba(0, 0, 0, 0.05) 20px
+    );
+}
+</style>
+
+                    
                 </form>
             </div>
 
@@ -151,19 +193,51 @@
             });
         </script>
 
-        <script>
+        <!-- <script>
             document.getElementById("contact-form").addEventListener("submit", function (e) {
                 e.preventDefault();
 
                 emailjs.sendForm("service_y2rbc4j", "template_gclqylb", this).then(
                     function () {
                         alert("Message sent successfully!");
+                        window.location.reload();
                     },
                     function (error) {
                         alert("Failed to send message. Error: " + error);
                     }
                 );
             });
-        </script>
+        </script> -->
+
+        <script>
+document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const sendBtn = document.getElementById("sendBtn");
+    const loaderOverlay = document.getElementById("pageLoader");
+
+    // Disable button & show overlay loader
+    sendBtn.disabled = true;
+    sendBtn.classList.add("opacity-50", "cursor-not-allowed");
+    loaderOverlay.classList.remove("hidden");
+
+    emailjs.sendForm("service_y2rbc4j", "template_gclqylb", this).then(
+        function () {
+            alert("Message sent successfully!");
+            window.location.reload();
+        },
+        function (error) {
+            alert("Failed to send message. Error: " + error);
+
+            // Restore UI on failure
+            sendBtn.disabled = false;
+            sendBtn.classList.remove("opacity-50", "cursor-not-allowed");
+            loaderOverlay.classList.add("hidden");
+        }
+    );
+});
+</script>
+
+
     </body>
 </html>
