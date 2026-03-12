@@ -98,26 +98,26 @@ function initProjectModal() {
     modalBody.innerHTML = `
       <div class="space-y-4">
         <div>
-          <p class="text-sm text-slate-500">Goal</p>
-          <p class="mt-1 text-slate-200">${payload.goal || "—"}</p>
+          <p class="text-sm text-slate-500 dark:text-slate-400">Goal</p>
+          <p class="mt-1 text-slate-900 dark:text-slate-100">${payload.goal || "—"}</p>
         </div>
         <div>
-          <p class="text-sm text-slate-500">What I did</p>
-          <ul class="mt-1 list-disc pl-5 space-y-1 text-slate-200">
+          <p class="text-sm text-slate-500 dark:text-slate-400">What I did</p>
+          <ul class="mt-1 list-disc pl-5 space-y-1 text-slate-900 dark:text-slate-100">
             ${(payload.did || []).map(x => `<li>${x}</li>`).join("") || "<li>—</li>"}
           </ul>
         </div>
         <div>
-          <p class="text-sm text-slate-500">Tools used</p>
+          <p class="text-sm text-slate-500 dark:text-slate-400">Tools used</p>
           <div class="mt-2 flex flex-wrap gap-2">
             ${(payload.tools || []).map(t => `
-              <span class="rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1 text-xs text-slate-200">${t}</span>
-            `).join("") || `<span class="text-slate-400 text-sm">—</span>`}
+              <span class="rounded-full border border-slate-300 dark:border-slate-600 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">${t}</span>
+            `).join("") || `<span class="text-slate-600 dark:text-slate-400 text-sm">—</span>`}
           </div>
         </div>
         <div>
-          <p class="text-sm text-slate-500">Output / Result</p>
-          <p class="mt-1 text-slate-200">${payload.result || "—"}</p>
+          <p class="text-sm text-slate-500 dark:text-slate-400">Output / Result</p>
+          <p class="mt-1 text-slate-900 dark:text-slate-100">${payload.result || "—"}</p>
         </div>
       </div>
     `;
@@ -178,7 +178,7 @@ function initLightbox() {
       detailsHTML += `
         <div>
           <p class="text-sm font-semibold text-slate-900">Context</p>
-          <p class="mt-1.5 text-sm text-slate-600 leading-relaxed">${payload.context}</p>
+          <p class="mt-1.5 text-sm text-slate-900 leading-relaxed">${payload.context}</p>
         </div>
       `;
     }
@@ -187,7 +187,7 @@ function initLightbox() {
       detailsHTML += `
         <div>
           <p class="text-sm font-semibold text-slate-900">My role</p>
-          <p class="mt-1.5 text-sm text-slate-600 leading-relaxed">${payload.role}</p>
+          <p class="mt-1.5 text-sm text-slate-900 leading-relaxed">${payload.role}</p>
         </div>
       `;
     }
@@ -197,7 +197,7 @@ function initLightbox() {
         <div>
           <p class="text-sm font-semibold text-slate-900">Tools used</p>
           <div class="mt-2 flex flex-wrap gap-2">
-            ${payload.tools.map(t => `<span class="rounded-full border border-slate-300 bg-slate-100 px-3 py-1 text-xs text-slate-700">${t}</span>`).join("")}
+            ${payload.tools.map(t => `<span class="rounded-full border border-slate-300 bg-slate-100 px-3 py-1 text-xs text-slate-900">${t}</span>`).join("")}
           </div>
         </div>
       `;
@@ -207,7 +207,7 @@ function initLightbox() {
       detailsHTML += `
         <div>
           <p class="text-sm font-semibold text-slate-900">Result</p>
-          <p class="mt-1.5 text-sm text-slate-600 leading-relaxed">${payload.result}</p>
+          <p class="mt-1.5 text-sm text-slate-900 leading-relaxed">${payload.result}</p>
         </div>
       `;
     }
@@ -216,7 +216,7 @@ function initLightbox() {
       detailsHTML += `
         <div>
           <div class="mt-4 flex flex-wrap gap-2">
-            ${payload.tags.map(tag => `<span class="rounded-full border border-slate-700 px-3 py-1 text-xs">${tag}</span>`).join("")}
+            ${payload.tags.map(tag => `<span class="rounded-full border border-slate-300 bg-slate-100 px-3 py-1 text-xs text-slate-900">${tag}</span>`).join("")}
           </div>
         </div>
       `;
@@ -361,8 +361,91 @@ function initContactForm() {
   });
 }
 
+// ---------- Theme Switcher ----------
+function initTheme() {
+  const html = document.documentElement;
+  const themeToggleBtn = qs("#theme-toggle");
+  const themeToggleMobileBtn = qs("#theme-toggle-mobile");
+  const THEME_KEY = "theme-preference";
+
+  // Determine the theme to use
+  const getTheme = () => {
+    // Check localStorage first
+    const stored = localStorage.getItem(THEME_KEY);
+    if (stored) return stored;
+
+    // Check system preference
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    return prefersDark ? "dark" : "light";
+  };
+
+  // Apply theme to DOM
+  const applyTheme = (theme) => {
+    if (theme === "dark") {
+      html.classList.add("dark");
+    } else {
+      html.classList.remove("dark");
+    }
+
+    // Update icon visibility
+    updateThemeIcons(theme);
+    localStorage.setItem(THEME_KEY, theme);
+  };
+
+  // Update icon visibility based on theme
+  const updateThemeIcons = (theme) => {
+    // Get all sun and moon icons
+    const sunIcons = qsa(".sun-icon");
+    const moonIcons = qsa(".moon-icon");
+    const toggleTexts = qsa(".toggle-text");
+
+    if (theme === "dark") {
+      // Dark mode is ON - show moon icon, hide sun
+      sunIcons.forEach(icon => icon.classList.add("hidden"));
+      moonIcons.forEach(icon => icon.classList.remove("hidden"));
+      toggleTexts.forEach(text => text.textContent = "Dark Mode");
+    } else {
+      // Light mode is ON - show sun icon, hide moon
+      sunIcons.forEach(icon => icon.classList.remove("hidden"));
+      moonIcons.forEach(icon => icon.classList.add("hidden"));
+      toggleTexts.forEach(text => text.textContent = "Light Mode");
+    }
+  };
+
+  // Toggle theme
+  const toggleTheme = () => {
+    const currentTheme = html.classList.contains("dark") ? "dark" : "light";
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+    applyTheme(newTheme);
+  };
+
+  // Event listeners for toggle buttons
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener("click", toggleTheme);
+  }
+  if (themeToggleMobileBtn) {
+    themeToggleMobileBtn.addEventListener("click", toggleTheme);
+  }
+
+  // Listen for system theme changes
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+    const newTheme = e.matches ? "dark" : "light";
+    applyTheme(newTheme);
+  });
+
+  // Initialize theme on page load
+  const initialTheme = getTheme();
+  applyTheme(initialTheme);
+  
+  // Force icon update after a brief delay to ensure DOM is ready
+  setTimeout(() => {
+    updateThemeIcons(initialTheme);
+  }, 50);
+}
+
 // ---------- Init ----------
 document.addEventListener("DOMContentLoaded", () => {
+  initTheme();
   initNav();
   initSmoothScroll();
   initReveal();

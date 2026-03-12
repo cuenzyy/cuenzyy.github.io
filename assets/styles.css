@@ -7,6 +7,293 @@ html {
   scroll-behavior: smooth;
 }
 
+/* DARK MODE COLORS */
+html.dark {
+  color-scheme: dark;
+}
+
+html.dark body {
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+html.dark header {
+  background-color: rgba(15, 23, 42, 0.8);
+  border-color: #334155;
+}
+
+/* Text color mapping for dark mode */
+html.dark .text-slate-900 {
+  color: #f1f5f9;
+}
+
+html.dark .text-slate-800 {
+  color: #e2e8f0;
+}
+
+html.dark .text-slate-700 {
+  color: #cbd5e1;
+}
+
+html.dark .text-slate-600 {
+  color: #94a3b8;
+}
+
+html.dark .text-slate-500 {
+  color: #64748b;
+}
+
+html.dark .text-slate-400 {
+  color: #94a3b8;
+}
+
+html.dark .text-slate-300 {
+  color: #cbd5e1;
+}
+
+html.dark .text-slate-200 {
+  color: #e2e8f0;
+}
+
+html.dark .text-slate-100 {
+  color: #cbd5e1;
+}
+
+html.dark .text-slate-50 {
+  color: #f1f5f9;
+}
+
+html.dark .text-white {
+  color: #f1f5f9;
+}
+
+/* Background color mapping */
+html.dark .bg-white {
+  background-color: #1e293b;
+}
+
+html.dark .bg-white\/80 {
+  background-color: rgba(30, 41, 59, 0.8);
+}
+
+html.dark .bg-slate-50 {
+  background-color: #1e293b;
+}
+
+html.dark .bg-slate-100 {
+  background-color: #334155;
+}
+
+html.dark .bg-slate-100\/80 {
+  background-color: rgba(51, 65, 85, 0.8);
+}
+
+html.dark .bg-slate-100\/40 {
+  background-color: rgba(51, 65, 85, 0.4);
+}
+
+html.dark .bg-slate-100\/30 {
+  background-color: rgba(30, 41, 59, 0.3);
+}
+
+html.dark .bg-slate-200 {
+  background-color: #475569;
+}
+
+html.dark .bg-slate-800 {
+  background-color: #1e293b;
+}
+
+html.dark .bg-slate-800\/30 {
+  background-color: rgba(30, 41, 59, 0.3);
+}
+
+html.dark .bg-slate-800\/40 {
+  background-color: rgba(30, 41, 59, 0.4);
+}
+
+html.dark .bg-slate-800\/80 {
+  background-color: rgba(30, 41, 59, 0.8);
+}
+
+html.dark .bg-slate-900 {
+  background-color: #0f172a;
+}
+
+html.dark .bg-slate-900\/30 {
+  background-color: rgba(15, 23, 42, 0.3);
+}
+
+html.dark .bg-slate-900\/40 {
+  background-color: rgba(15, 23, 42, 0.4);
+}
+
+html.dark .bg-slate-900\/45 {
+  background-color: rgba(15, 23, 42, 0.45);
+}
+
+html.dark .bg-slate-900\/60 {
+  background-color: rgba(15, 23, 42, 0.6);
+}
+
+html.dark .bg-slate-950 {
+  background-color: #000000;
+}
+
+html.dark .bg-slate-950\/40 {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+html.dark .bg-slate-950\/50 {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Gradient backgrounds in dark mode */
+html.dark .bg-gradient-to-br {
+  background: linear-gradient(to bottom right, #334155, #1e293b) !important;
+}
+
+/* Border color mapping */
+html.dark .border-slate-200 {
+  border-color: #334155;
+}
+
+html.dark .border-slate-200\/60 {
+  border-color: rgba(51, 65, 85, 0.6);
+}
+
+html.dark .border-slate-300 {
+  border-color: #475569;
+}
+
+html.dark .border-slate-600 {
+  border-color: #475569;
+}
+
+html.dark .border-slate-700 {
+  border-color: #334155;
+}
+
+html.dark .border-slate-700\/60 {
+  border-color: rgba(51, 65, 85, 0.6);
+}
+
+html.dark .border-slate-800 {
+  border-color: #334155;
+}
+
+html.dark .border-slate-800\/60 {
+  border-color: rgba(51, 65, 85, 0.6);
+}
+
+html.dark .border-blue-500 {
+  border-color: #3b82f6;
+}
+
+html.dark .border-blue-500\/30 {
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+/* Ring color */
+html.dark .ring-slate-200 {
+  --tw-ring-color: #334155;
+}
+
+html.dark .ring-slate-800 {
+  --tw-ring-color: #334155;
+}
+
+html.dark .ring-slate-300 {
+  --tw-ring-color: #475569;
+}
+
+html.dark .ring-slate-700 {
+  --tw-ring-color: #334155;
+}
+
+html.dark .ring-blue-400 {
+  --tw-ring-color: #60a5fa;
+}
+
+html.dark .ring-blue-500 {
+  --tw-ring-color: #3b82f6;
+}
+
+html.dark .ring-blue-500\/30 {
+  --tw-ring-color: rgba(59, 130, 246, 0.3);
+}
+
+html.dark .ring-indigo-500\/30 {
+  --tw-ring-color: rgba(99, 102, 241, 0.3);
+}
+
+html.dark .ring-sky-500\/30 {
+  --tw-ring-color: rgba(14, 165, 233, 0.3);
+}
+
+/* Logo white filter */
+html.dark img[src*="logo"],
+html.dark img[src*="cv_logo"] {
+  filter: brightness(0) invert(1);
+}
+
+/* Hover state mappings for dark mode */
+html.dark .hover\:bg-slate-100:hover {
+  background-color: #334155;
+}
+
+html.dark .hover\:bg-slate-200:hover {
+  background-color: #475569;
+}
+
+html.dark .hover\:bg-slate-900:hover {
+  background-color: #1e293b;
+}
+
+html.dark .hover\:bg-slate-900\/45:hover {
+  background-color: rgba(30, 41, 59, 0.45);
+}
+
+html.dark .hover\:bg-slate-700:hover {
+  background-color: #334155;
+}
+
+html.dark .hover\:text-slate-900:hover {
+  color: #f1f5f9;
+}
+
+html.dark .hover\:text-white:hover {
+  color: #cbd5e1;
+}
+
+html.dark .hover\:text-slate-50:hover {
+  color: #f1f5f9;
+}
+
+html.dark .hover\:border-slate-200:hover {
+  border-color: #475569;
+}
+
+html.dark .hover\:bg-blue-400:hover {
+  background-color: #60a5fa;
+}
+
+html.dark .hover\:bg-blue-600:hover {
+  background-color: #2563eb;
+}
+
+/* Toggle button styling */
+html.dark #theme-toggle,
+html.dark #theme-toggle-mobile {
+  background-color: #334155;
+  border-color: #475569;
+}
+
+html.dark #theme-toggle:hover,
+html.dark #theme-toggle-mobile:hover {
+  background-color: #475569;
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;

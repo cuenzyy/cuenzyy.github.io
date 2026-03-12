@@ -3,17 +3,27 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="images/favicon.png" />
   <title>Galleries — Vincent Cuenza</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="assets/styles.css" />
+  <script>
+    // Prevent theme flash by applying theme before page renders
+    (function() {
+      const stored = localStorage.getItem('theme-preference');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const isDark = stored === 'dark' || (!stored && prefersDark);
+      if (isDark) document.documentElement.classList.add('dark');
+    })();
+  </script>
 </head>
 
-<body class="min-h-screen">
-  <header class="sticky top-0 z-50 border-b border-slate-200/60 bg-white/80 backdrop-blur">
+<body class="min-h-screen bg-white text-slate-900">
+  <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur">
     <div class="mx-auto max-w-6xl px-4">
       <div class="flex h-16 items-center justify-between">
         <a href="index.html" class="flex items-center gap-3">
-          <div class="grid h-9 w-9 place-items-center ring-slate-200">
+          <div class="grid h-9 w-9 place-items-center ring-slate-200 dark:ring-slate-700">
             <img src="images/cv_logo.png" alt="CV Logo" />
           </div>
           <div class="leading-tight">
@@ -30,10 +40,29 @@
           <a class="text-sm text-slate-700 hover:text-slate-900" href="social.html">Social Media</a>
           <a class="text-sm text-slate-700 hover:text-slate-900" href="contact.html">Contact</a>
 
+          <button id="theme-toggle" aria-label="Toggle dark mode"
+             class="rounded-xl border border-slate-200 bg-slate-100 p-2 hover:bg-slate-200 focus-ring transition-colors">
+            <svg class="sun-icon h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="moon-icon hidden h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+
           <a href="contact.html"
              class="rounded-xl bg-blue-500 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-600 focus-ring">
             Hire Me
           </a>
+        </nav>
 
         <button data-nav-toggle aria-expanded="false"
           class="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-slate-100/40 p-2 hover:bg-slate-100 lg:hidden focus-ring"
@@ -45,7 +74,25 @@
       </div>
 
       <div data-nav-panel class="hidden pb-4 lg:hidden">
-        <div class="space-y-2 rounded-2xl border border-slate-200 bg-slate-100/40 p-4">
+            <div class="space-y-2 rounded-2xl border border-slate-200 bg-slate-100/40 p-4">
+          <button id="theme-toggle-mobile" aria-label="Toggle dark mode"
+             class="w-full rounded-xl border border-slate-200 bg-slate-100/80 p-3 hover:bg-slate-100 focus-ring transition-colors flex items-center justify-center gap-2 text-sm font-semibold mb-3">
+            <svg class="sun-icon h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="moon-icon hidden h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <span class="toggle-text">Light Mode</span>
+          </button>
           <div class="grid gap-2">
             <a class="rounded-xl px-3 py-2 text-sm hover:bg-slate-100" href="index.html">Home</a>
             <a class="rounded-xl px-3 py-2 text-sm hover:bg-slate-100" href="work.html">Work Experience</a>
@@ -65,7 +112,7 @@
   </header>
 
   <main>
-    <section class="border-b border-slate-200/60">
+    <section class="border-b border-slate-200">
       <div class="mx-auto max-w-6xl px-4 py-14">
         <div class="reveal">
           <h1 class="text-3xl font-semibold tracking-tight md:text-4xl">Galleries of my Work</h1>
@@ -78,7 +125,7 @@
     </section>
 
     <!-- Gallery Section: CRM Management -->
-    <section class="border-b border-slate-200/60">
+    <section class="border-b border-slate-200">
       <div class="mx-auto max-w-6xl px-4 py-14">
         <div class="reveal">
           <h2 class="text-2xl font-semibold tracking-tight">CRM Management</h2>
@@ -140,10 +187,10 @@
                   <p class="mt-2 text-slate-700"><span class="text-slate-500">Tools used:</span> HubSpot, Google Sheets</p>
                   <p class="mt-2 text-slate-700"><span class="text-slate-500">Result:</span> Team gained clear visibility into deal flow, reducing time spent in status updates and enabling faster forecasting.</p>
                   <div class="mt-4 flex flex-wrap gap-2">
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">CRM</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Sales Pipeline</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">HubSpot</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Dashboard</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">CRM</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Sales Pipeline</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">HubSpot</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Dashboard</span>
                   </div>
                 </div>
                 <!-- Description 2 -->
@@ -154,9 +201,9 @@
                   <p class="mt-2 text-slate-700"><span class="text-slate-500">Tools used:</span> HubSpot, Call Tracking Integration</p>
                   <p class="mt-2 text-slate-700"><span class="text-slate-500">Result:</span> Improved call documentation, enabled better follow-up management, and increased team accountability through transparent activity tracking.</p>
                   <div class="mt-4 flex flex-wrap gap-2">
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">CRM</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Activity Tracking</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Sales Calls</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">CRM</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Activity Tracking</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Sales Calls</span>
                   </div>
                 </div>
 
@@ -168,7 +215,7 @@
     </section>
 
     <!-- Gallery Section: Admin Support -->
-    <section class="border-b border-slate-200/60">
+    <section class="border-b border-slate-200">
       <div class="mx-auto max-w-6xl px-4 py-14">
         <div class="reveal">
           <h2 class="text-2xl font-semibold tracking-tight">Admin Support</h2>
@@ -241,9 +288,9 @@
                   <p class="mt-2 text-slate-700"><span class="text-slate-500">Tools used:</span> TurboTenant</p>
                   <p class="mt-2 text-slate-700"><span class="text-slate-500">Result:</span> Streamlined property management with centralized information access, reducing time spent hunting for data across multiple screens.</p>
                   <div class="mt-4 flex flex-wrap gap-2">
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Property Management</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Admin</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Dashboard</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Property Management</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Admin</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Dashboard</span>
                   </div>
                 </div>
                 <!-- Description 2 -->
@@ -254,9 +301,9 @@
                   <p class="mt-2 text-slate-700"><span class="text-slate-500">Tools used:</span> TurboTenant</p>
                   <p class="mt-2 text-slate-700"><span class="text-slate-500">Result:</span> Improved rent collection efficiency, reduced late payments, and streamlined reconciliation process.</p>
                   <div class="mt-4 flex flex-wrap gap-2">
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Payment Management</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Admin</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Finance</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Payment Management</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Admin</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Finance</span>
                   </div>
                 </div>
                 <!-- Description 3 -->
@@ -267,9 +314,9 @@
                   <p class="mt-2 text-slate-700"><span class="text-slate-500">Tools used:</span> TurboTenant</p>
                   <p class="mt-2 text-slate-700"><span class="text-slate-500">Result:</span> Centralized lease information improved renewal management and reduced missed renewal deadlines.</p>
                   <div class="mt-4 flex flex-wrap gap-2">
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Lease Management</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Admin</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Organization</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Lease Management</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Admin</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Organization</span>
                   </div>
                 </div>
                 <!-- Description 4 -->
@@ -280,9 +327,9 @@
                   <p class="mt-2 text-slate-700"><span class="text-slate-500">Tools used:</span> TurboTenant</p>
                   <p class="mt-2 text-slate-700"><span class="text-slate-500">Result:</span> Faster response times to tenant maintenance issues, improved vendor accountability, and reduced liability from delayed repairs.</p>
                   <div class="mt-4 flex flex-wrap gap-2">
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Maintenance Management</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Admin</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Tenant Relations</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Maintenance Management</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Admin</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Tenant Relations</span>
                   </div>
                 </div>
                 <!-- Description 5 -->
@@ -293,9 +340,9 @@
                   <p class="mt-2 text-slate-700"><span class="text-slate-500">Tools used:</span> Zoom Tenants, Automation, SMS/Email Integration</p>
                   <p class="mt-2 text-slate-700"><span class="text-slate-500">Result:</span> Reduced late payments by 35%, improved tenant communication clarity, and decreased administrative follow-up workload.</p>
                   <div class="mt-4 flex flex-wrap gap-2">
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Automation</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Communication</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Tenant Relations</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Automation</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Communication</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Tenant Relations</span>
                   </div>
                 </div>
               </div>
@@ -306,7 +353,7 @@
     </section>
 
     <!-- Gallery Section: Design / Canva -->
-    <section class="border-b border-slate-200/60">
+    <section class="border-b border-slate-200">
       <div class="mx-auto max-w-6xl px-4 py-14">
         <div class="reveal">
           <h2 class="text-2xl font-semibold tracking-tight">Marketing Graphics</h2>
@@ -394,11 +441,11 @@
                   <p class="mt-2 text-slate-700"><span class="text-slate-500">Tools used:</span> Canva</p>
                   <p class="mt-2 text-slate-700"><span class="text-slate-500">Result:</span> Created a professional listing announcement graphic optimized for social media, helping the agent highlight the new property, capture audience attention, and increase listing visibility.</p>
                   <div class="mt-4 flex flex-wrap gap-2">
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Real Estate</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Canva</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Social Media Graphics</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Property Listing</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Marketing</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Real Estate</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Canva</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Social Media Graphics</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Property Listing</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Marketing</span>
                   </div>
                 </div>
                 <!-- Description 2 -->
@@ -409,11 +456,11 @@
                   <p class="mt-2 text-slate-700"><span class="text-slate-500">Tools used:</span> Canva</p>
                   <p class="mt-2 text-slate-700"><span class="text-slate-500">Result:</span> Created a clean and visually appealing interior showcase graphic optimized for social media, helping the agent present the home’s interior spaces and attract potential buyers.</p>
                   <div class="mt-4 flex flex-wrap gap-2">
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Real Estate</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Canva</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Social Media Graphics</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Property Listing</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Marketing</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Real Estate</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Canva</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Social Media Graphics</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Property Listing</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Marketing</span>
                   </div>
                 </div>
                 <!-- Description 3 -->
@@ -424,25 +471,25 @@
                   <p class="mt-2 text-slate-700"><span class="text-slate-500">Tools used:</span> Canva </p>
                   <p class="mt-2 text-slate-700"><span class="text-slate-500">Result:</span> Produced a polished real estate marketing graphic optimized for social media, helping present the property’s interior space clearly while supporting the agent’s online listing promotion.</p>
                   <div class="mt-4 flex flex-wrap gap-2">
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Real Estate</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Canva</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Social Media Graphics</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Property Listing</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Marketing</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Real Estate</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Canva</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Social Media Graphics</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Property Listing</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Marketing</span>
                   </div>
                 </div>
                 <!-- Description 4 -->
                 <div class="carousel-description hidden">
                   <h3 class="text-lg font-semibold">Real Estate Sold Property Promotion</h3>
                   <p class="mt-2 text-slate-700"><span class="text-slate-500">Context:</span> A real estate agent needed a promotional graphic to announce that a property had been successfully sold and to showcase the completed transaction on social media.</p>
-                  <p class="mt-2 text-latex-700"><span class="text-slate-500">My role:</span> Designed a real estate marketing graphic highlighting the SOLD status of the property, featuring a clean interior photo of the home along with key property details such as 1,664 SQF – 3 Bed – 3 Bath to make the announcement visually engaging.</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">My role:</span> Designed a real estate marketing graphic highlighting the SOLD status of the property, featuring a clean interior photo of the home along with key property details such as 1,664 SQF – 3 Bed – 3 Bath to make the announcement visually engaging.</p>
                   <p class="mt-2 text-slate-700"><span class="text-slate-500">Tools used:</span> Canva</p>
                   <p class="mt-2 text-slate-700"><span class="text-slate-500">Result:</span> Created a clear and professional sold-property graphic optimized for social media, helping the agent build credibility, showcase successful sales, and attract potential future clients.</p>
                   <div class="mt-4 flex flex-wrap gap-2">
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Real Estate</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Canva</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Sold Property</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Social Media Graphics</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Real Estate</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Canva</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Sold Property</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Social Media Graphics</span>
                   </div>
                 </div>
                 <!-- Description 5 -->
@@ -453,24 +500,24 @@
                   <p class="mt-2 text-slate-700"><span class="text-slate-500">Tools used:</span> Canva</p>
                   <p class="mt-2 text-slate-700"><span class="text-slate-500">Result:</span> Produced a clean and engaging real estate marketing graphic optimized for social media, helping the agent promote the open house event and attract potential buyers to view the property.</p>
                   <div class="mt-4 flex flex-wrap gap-2">
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Real Estate</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Canva</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Open House Promotion</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Social Media Graphics</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Real Estate</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Canva</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Open House Promotion</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Social Media Graphics</span>
                   </div>
                 </div>
                 <!-- Description 6 -->
                 <div class="carousel-description hidden">
                   <h3 class="text-lg font-semibold">Real Estate Property Promotion Video</h3>
                   <p class="mt-2 text-slate-700"><span class="text-slate-500">Context:</span> A real estate agent needed a short promotional video to showcase a property listing and capture attention on social media platforms.</p>
-                  <p class="mt-2 text-latex-700"><span class="text-slate-500">My role:</span> Created a property marketing video that highlights the home’s aerial view, key property details, and essential features such as bedrooms, bathrooms, and square footage in a clean and engaging layout.</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">My role:</span> Created a property marketing video that highlights the home's aerial view, key property details, and essential features such as bedrooms, bathrooms, and square footage in a clean and engaging layout.</p>
                   <p class="mt-2 text-slate-700"><span class="text-slate-500">Tools used:</span> Capcut</p>
                   <p class="mt-2 text-slate-700"><span class="text-slate-500">Result:</span> Produced a short real estate promotional video optimized for social media platforms, helping present the property in a more dynamic and engaging format to attract potential buyers.</p>
                   <div class="mt-4 flex flex-wrap gap-2">
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Real Estate</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Video Editing</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Capcut</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Promotional Content</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Real Estate</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Video Editing</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Capcut</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Promotional Content</span>
                   </div>
                 </div>
                 <!-- Description 7 -->
@@ -481,10 +528,10 @@
                   <p class="mt-2 text-slate-700"><span class="text-slate-500">Tools used:</span> Capcut</p>
                   <p class="mt-2 text-slate-700"><span class="text-slate-500">Result:</span> Created a dynamic real estate marketing video optimized for social media platforms, helping increase property interest and encouraging potential buyers to book a viewing.</p>
                   <div class="mt-4 flex flex-wrap gap-2">
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Real Estate</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Video Editing</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Capcut</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Promotional Content</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Real Estate</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Video Editing</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Capcut</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Promotional Content</span>
                   </div>
                 </div>
                 <!-- Description 8 -->
@@ -492,13 +539,13 @@
                   <h3 class="text-lg font-semibold">Open House Property Promotion Video</h3>
                   <p class="mt-2 text-slate-700"><span class="text-slate-500">Context:</span> A real estate agent needed a short promotional video to advertise an upcoming open house event and showcase the property’s key features to attract potential buyers.</p>
                   <p class="mt-2 text-slate-700"><span class="text-slate-500">My role:</span> Created a dynamic real estate promotional video combining aerial views and interior property shots with key listing details such as price, square footage, bedrooms, and bathrooms, while highlighting the Open House announcement to encourage viewers to visit the property.</p>
-                  <p class="mt-2 text-latex-700"><span class="text-slate-500">Tools used:</span> Capcut</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Tools used:</span> Capcut</p>
                   <p class="mt-2 text-slate-700"><span class="text-slate-500">Result:</span> Produced an engaging open house promotional video optimized for social media, helping increase visibility for the event and drive interest from prospective buyers.</p>
                   <div class="mt-4 flex flex-wrap gap-2">
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Real Estate</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Video Editing</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Capcut</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Promotional Content</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Real Estate</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Video Editing</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Capcut</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Promotional Content</span>
                   </div>
                 </div>
                 <!-- Description 9 -->
@@ -509,10 +556,10 @@
                   <p class="mt-2 text-slate-700"><span class="text-slate-500">Tools used:</span> Capcut</p>
                   <p class="mt-2 text-slate-700"><span class="text-slate-500">Result:</span> Delivered a dynamic property promotion video optimized for social media platforms, helping increase buyer interest and drive inquiries for private property viewings.</p>
                   <div class="mt-4 flex flex-wrap gap-2">
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Real Estate</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Video Editing</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Capcut</span>
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Promotional Content</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Real Estate</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Video Editing</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Capcut</span>
+                    <span class="rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs text-slate-900 dark:text-slate-200">Promotional Content</span>
                   </div>
                 </div>
                 <!-- Description 10 -->
@@ -541,7 +588,7 @@
             <a href="contact.html" class="inline-flex items-center justify-center rounded-xl bg-blue-500 px-5 py-3 text-sm font-semibold text-white hover:bg-blue-400 focus-ring">
               Get In Touch
             </a>
-            <a href="https://calendly.com/your-calendly-link" target="_blank" rel="noreferrer"
+            <a href="https://calendly.com/vincentcuenza-work/30min" target="_blank" rel="noreferrer"
                class="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold hover:bg-slate-100 focus-ring">
               Book a Call →
             </a>
@@ -577,7 +624,7 @@
     </div>
   </div>
 
-  <footer class="border-t border-slate-200/60">
+  <footer class="border-t border-slate-200">
     <div class="mx-auto max-w-6xl px-4 py-10 text-sm text-slate-500">
       <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <p>© <span data-year></span> Vincent Cuenza. All rights reserved.</p>
