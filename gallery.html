@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en" class="bg-white text-slate-900">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Galleries — Vincent Cuenza</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+
+<body class="min-h-screen">
+  <header class="sticky top-0 z-50 border-b border-slate-200/60 bg-white/80 backdrop-blur">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="flex h-16 items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="grid h-9 w-9 place-items-center ring-slate-200">
+            <img src="images/cv_logo.png" alt="CV Logo" />
+          </div>
+          <div class="leading-tight">
+            <p class="text-sm font-semibold">Vincent Cuenza</p>
+            <p class="text-xs text-slate-500">Virtual Assistant</p>
+          </div>
+        </a>
+
+        <nav class="hidden items-center gap-6 lg:flex">
+          <a class="text-sm text-slate-700 hover:text-slate-900" href="index.html">Home</a>
+          <a class="text-sm text-slate-700 hover:text-slate-900" href="work.html">Work Experience</a>
+          <a class="text-sm text-slate-700 hover:text-slate-900" href="certifications.html">Certifications</a>
+          <a class="text-sm text-slate-900" href="gallery.html">Galleries</a>
+          <a class="text-sm text-slate-700 hover:text-slate-900" href="social.html">Social Media</a>
+          <a class="text-sm text-slate-700 hover:text-slate-900" href="contact.html">Contact</a>
+
+          <a href="contact.html"
+             class="rounded-xl bg-blue-500 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-600 focus-ring">
+            Hire Me
+          </a>
+
+        <button data-nav-toggle aria-expanded="false"
+          class="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-slate-100/40 p-2 hover:bg-slate-100 lg:hidden focus-ring"
+          aria-label="Open Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+
+      <div data-nav-panel class="hidden pb-4 lg:hidden">
+        <div class="space-y-2 rounded-2xl border border-slate-200 bg-slate-100/40 p-4">
+          <div class="grid gap-2">
+            <a class="rounded-xl px-3 py-2 text-sm hover:bg-slate-100" href="index.html">Home</a>
+            <a class="rounded-xl px-3 py-2 text-sm hover:bg-slate-100" href="work.html">Work Experience</a>
+            <a class="rounded-xl px-3 py-2 text-sm hover:bg-slate-100" href="certifications.html">Certifications & Trainings</a>
+            <a class="rounded-xl px-3 py-2 text-sm hover:bg-slate-100" href="gallery.html">Galleries of my Work</a>
+            <a class="rounded-xl px-3 py-2 text-sm hover:bg-slate-100" href="social.html">Social Media</a>
+            <a class="rounded-xl px-3 py-2 text-sm hover:bg-slate-100" href="contact.html">Contact</a>
+          </div>
+
+          <a href="contact.html"
+             class="mt-3 inline-flex w-full items-center justify-center rounded-xl bg-blue-500 px-4 py-2 text-sm font-semibold text-slate-950 hover:bg-blue-400 focus-ring">
+            Hire Me
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="border-b border-slate-200/60">
+      <div class="mx-auto max-w-6xl px-4 py-14">
+        <div class="reveal">
+          <h1 class="text-3xl font-semibold tracking-tight md:text-4xl">Galleries of my Work</h1>
+          <p class="mt-3 max-w-3xl text-slate-700">
+            A client-style portfolio of deliverables: CRM dashboards, SOP layouts, trackers, marketing graphics, and workflow automation previews.
+            Replace placeholders with real screenshots anytime — the layout is ready.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section: CRM Management -->
+    <section class="border-b border-slate-200/60">
+      <div class="mx-auto max-w-6xl px-4 py-14">
+        <div class="reveal">
+          <h2 class="text-2xl font-semibold tracking-tight">CRM Management</h2>
+          <p class="mt-2 text-slate-500">Dashboard previews, pipeline updates, and data cleanup samples.</p>
+        </div>
+
+        <div class="mt-8 reveal">
+          <div class="carousel-container rounded-3xl border border-slate-200 bg-slate-100/30 p-6">
+            <div class="grid gap-6 lg:grid-cols-2">
+              <!-- Left: Image/Video Viewer -->
+              <div class="relative">
+                <div class="carousel-viewer overflow-hidden rounded-2xl border border-slate-200 bg-white/50">
+                  <div class="carousel-slides">
+                    <!-- Slide 1 - HubSpot Deals -->
+                    <img class="carousel-slide h-96 w-full object-cover" 
+                      src="images/graphic_samples/admin_assistants/hubspot_1.png" 
+                      alt="HubSpot Deals Dashboard"
+                      data-lightbox-open="{&quot;src&quot;:&quot;images/graphic_samples/admin_assistants/hubspot_1.png&quot;,&quot;title&quot;:&quot;HubSpot Deals Pipeline Management&quot;,&quot;context&quot;:&quot;Sales team needed better visibility into deal progression and pipeline health across all stages.&quot;,&quot;role&quot;:&quot;Set up deal tracking dashboard, configured pipeline stages, and created automated deal summaries for weekly reviews.&quot;,&quot;tools&quot;:[&quot;HubSpot&quot;,&quot;Google Sheets&quot;],&quot;result&quot;:&quot;Team gained clear visibility into deal flow, reducing time spent in status updates and enabling faster forecasting.&quot;,&quot;tags&quot;:[&quot;CRM&quot;,&quot;Sales Pipeline&quot;,&quot;HubSpot&quot;,&quot;Dashboard&quot;]}" />
+                    <!-- Slide 2 - HubSpot Calls -->
+                    <img class="carousel-slide h-96 w-full object-cover hidden" 
+                      src="images/graphic_samples/admin_assistants/hubspot_2.png" 
+                      alt="HubSpot Calls and Activities"
+                      data-lightbox-open="{&quot;src&quot;:&quot;images/graphic_samples/admin_assistants/hubspot_2.png&quot;,&quot;title&quot;:&quot;Call Activity Tracking and Logging&quot;,&quot;context&quot;:&quot;Sales team had difficulty tracking call history and activity notes across all customer interactions.&quot;,&quot;role&quot;:&quot;Configured call logging settings, created activity templates, and built call reporting dashboard for team accountability.&quot;,&quot;tools&quot;:[&quot;HubSpot&quot;,&quot;Call Tracking Integration&quot;],&quot;result&quot;:&quot;Improved call documentation, enabled better follow-up management, and increased team accountability through transparent activity tracking.&quot;,&quot;tags&quot;:[&quot;CRM&quot;,&quot;Activity Tracking&quot;,&quot;Sales Calls&quot;,&quot;HubSpot&quot;]}" />
+
+
+
+
+
+
+
+
+
+                  </div>
+                </div>
+                <!-- Navigation Arrows -->
+                <button class="carousel-prev absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-2 hover:bg-white focus-ring z-10" aria-label="Previous slide">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                  </svg>
+                </button>
+                <button class="carousel-next absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-2 hover:bg-white focus-ring z-10" aria-label="Next slide">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </button>
+                <!-- Slide Counter -->
+                <div class="mt-3 text-center text-sm text-slate-500">
+                  <span class="carousel-current">1</span> / <span class="carousel-total">2</span>
+                </div>
+              </div>
+
+              <!-- Right: Description -->
+              <div class="carousel-descriptions">
+                <!-- Description 1 -->
+                <div class="carousel-description">
+                  <h3 class="text-lg font-semibold">HubSpot Deals Pipeline Management</h3>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Context:</span> Sales team needed better visibility into deal progression and pipeline health across all stages.</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">My role:</span> Set up deal tracking dashboard, configured pipeline stages, and created automated deal summaries for weekly reviews.</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Tools used:</span> HubSpot, Google Sheets</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Result:</span> Team gained clear visibility into deal flow, reducing time spent in status updates and enabling faster forecasting.</p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">CRM</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Sales Pipeline</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">HubSpot</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Dashboard</span>
+                  </div>
+                </div>
+                <!-- Description 2 -->
+                <div class="carousel-description hidden">
+                  <h3 class="text-lg font-semibold">Call Activity Tracking and Logging</h3>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Context:</span> Sales team had difficulty tracking call history and activity notes across all customer interactions.</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">My role:</span> Configured call logging settings, created activity templates, and built call reporting dashboard for team accountability.</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Tools used:</span> HubSpot, Call Tracking Integration</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Result:</span> Improved call documentation, enabled better follow-up management, and increased team accountability through transparent activity tracking.</p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">CRM</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Activity Tracking</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Sales Calls</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section: Admin Support -->
+    <section class="border-b border-slate-200/60">
+      <div class="mx-auto max-w-6xl px-4 py-14">
+        <div class="reveal">
+          <h2 class="text-2xl font-semibold tracking-tight">Admin Support</h2>
+          <p class="mt-2 text-slate-500">SOPs, call scripts, and process documentation.</p>
+        </div>
+
+        <div class="mt-8 reveal">
+          <div class="carousel-container rounded-3xl border border-slate-200 bg-slate-100/30 p-6">
+            <div class="grid gap-6 lg:grid-cols-2">
+              <!-- Left: Image/Video Viewer -->
+              <div class="relative">
+                <div class="carousel-viewer overflow-hidden rounded-2xl border border-slate-200 bg-white/50">
+                  <div class="carousel-slides">
+                    <!-- Slide 1 - TurboTenant Dashboard -->
+                    <img class="carousel-slide h-96 w-full object-cover" 
+                      src="images/graphic_samples/admin_assistants/turbo_tenants_1.png" 
+                      alt="TurboTenant Dashboard"
+                      data-lightbox-open="{&quot;src&quot;:&quot;images/graphic_samples/admin_assistants/turbo_tenants_1.png&quot;,&quot;title&quot;:&quot;Property Management Dashboard&quot;,&quot;context&quot;:&quot;Property managers needed a centralized view of all tenant and property information with quick access to critical data.&quot;,&quot;role&quot;:&quot;Set up the main dashboard with key metrics, recent activities, and property overview, organizing information for efficient daily operations.&quot;,&quot;tools&quot;:[&quot;TurboTenant&quot;],&quot;result&quot;:&quot;Streamlined property management with centralized information access, reducing time spent hunting for data across multiple screens.&quot;,&quot;tags&quot;:[&quot;Property Management&quot;,&quot;Admin&quot;,&quot;Dashboard&quot;,&quot;TurboTenant&quot;]}" />
+                    <!-- Slide 2 - TurboTenant Payments -->
+                    <img class="carousel-slide h-96 w-full object-cover hidden" 
+                      src="images/graphic_samples/admin_assistants/turbo_tenants_2.jpg" 
+                      alt="TurboTenant Payments Tracking"
+                      data-lightbox-open="{&quot;src&quot;:&quot;images/graphic_samples/admin_assistants/turbo_tenants_2.jpg&quot;,&quot;title&quot;:&quot;Payment Tracking and Rent Collection&quot;,&quot;context&quot;:&quot;Property managers struggled to track payment status across multiple properties and tenants, leading to delayed follow-up on late payments.&quot;,&quot;role&quot;:&quot;Configured payment tracking dashboards, set up automatic reminders, and organized payment records for quick reference and reporting.&quot;,&quot;tools&quot;:[&quot;TurboTenant&quot;],&quot;result&quot;:&quot;Improved rent collection efficiency, reduced late payments, and streamlined reconciliation process.&quot;,&quot;tags&quot;:[&quot;Payment Management&quot;,&quot;Admin&quot;,&quot;Finance&quot;,&quot;TurboTenant&quot;]}" />
+                    <!-- Slide 3 - TurboTenant Lease Profiles -->
+                    <img class="carousel-slide h-96 w-full object-cover hidden" 
+                      src="images/graphic_samples/admin_assistants/turbo_tenants_3.png" 
+                      alt="TurboTenant Lease Profiles"
+                      data-lightbox-open="{&quot;src&quot;:&quot;images/graphic_samples/admin_assistants/turbo_tenants_3.png&quot;,&quot;title&quot;:&quot;Lease Profile Management&quot;,&quot;context&quot;:&quot;Managers needed quick access to lease information, terms, and tenant details without searching through multiple documents.&quot;,&quot;role&quot;:&quot;Organized lease profiles with key information (term dates, rent amounts, renewal dates), created templates for consistency, and set up alerts for upcoming lease renewals.&quot;,&quot;tools&quot;:[&quot;TurboTenant&quot;],&quot;result&quot;:&quot;Centralized lease information improved renewal management and reduced missed renewal deadlines.&quot;,&quot;tags&quot;:[&quot;Lease Management&quot;,&quot;Admin&quot;,&quot;Organization&quot;,&quot;TurboTenant&quot;]}" />
+                    <!-- Slide 4 - TurboTenant Maintenance -->
+                    <img class="carousel-slide h-96 w-full object-cover hidden" 
+                      src="images/graphic_samples/admin_assistants/turbo_tenants_4.png" 
+                      alt="TurboTenant Maintenance Tracking"
+                      data-lightbox-open="{&quot;src&quot;:&quot;images/graphic_samples/admin_assistants/turbo_tenants_4.png&quot;,&quot;title&quot;:&quot;Maintenance Request Tracking&quot;,&quot;context&quot;:&quot;Property managers struggled to track maintenance requests, prioritize repairs, and follow up with vendors without a clear system.&quot;,&quot;role&quot;:&quot;Set up maintenance request logging, created priority-based workflows, and established tracking for open vs. completed tickets with vendor communication logs.&quot;,&quot;tools&quot;:[&quot;TurboTenant&quot;],&quot;result&quot;:&quot;Faster response times to tenant maintenance issues, improved vendor accountability, and reduced liability from delayed repairs.&quot;,&quot;tags&quot;:[&quot;Maintenance Management&quot;,&quot;Admin&quot;,&quot;Tenant Relations&quot;,&quot;TurboTenant&quot;]}" />
+                    <!-- Slide 5 - Zoom Tenants Reminder -->
+                    <img class="carousel-slide h-96 w-full object-cover hidden" 
+                      src="images/graphic_samples/admin_assistants/zoom_tenants_sample_reminder.png" 
+                      alt="Automated Tenant Reminder"
+                      data-lightbox-open="{&quot;src&quot;:&quot;images/graphic_samples/admin_assistants/zoom_tenants_sample_reminder.png&quot;,&quot;title&quot;:&quot;Automated Tenant Communication System&quot;,&quot;context&quot;:&quot;Tenants frequently missed payment deadlines, lease renewal dates, and maintenance appointments due to lack of timely reminders.&quot;,&quot;role&quot;:&quot;Set up automated SMS and email reminder sequences for key dates (rent due, lease renewal, inspections), customized messaging for different tenant segments, and tracked delivery/open rates.&quot;,&quot;tools&quot;:[&quot;Zoom Tenants&quot;,&quot;Automation&quot;,&quot;SMS/Email Integration&quot;],&quot;result&quot;:&quot;Reduced late payments by 35%, improved tenant communication clarity, and decreased administrative follow-up workload.&quot;,&quot;tags&quot;:[&quot;Automation&quot;,&quot;Communication&quot;,&quot;Tenant Relations&quot;,&quot;Admin&quot;]}" />
+
+
+
+
+
+                  </div>
+                </div>
+                <!-- Navigation Arrows -->
+                <button class="carousel-prev absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-2 hover:bg-white focus-ring z-10" aria-label="Previous slide">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                  </svg>
+                </button>
+                <button class="carousel-next absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-2 hover:bg-white focus-ring z-10" aria-label="Next slide">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </button>
+                <!-- Slide Counter -->
+                <div class="mt-3 text-center text-sm text-slate-500">
+                  <span class="carousel-current">1</span> / <span class="carousel-total">5</span>
+                </div>
+              </div>
+
+              <!-- Right: Description -->
+              <div class="carousel-descriptions">
+                <!-- Description 1 -->
+                <div class="carousel-description">
+                  <h3 class="text-lg font-semibold">Property Management Dashboard</h3>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Context:</span> Property managers needed a centralized view of all tenant and property information with quick access to critical data.</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">My role:</span> Set up the main dashboard with key metrics, recent activities, and property overview, organizing information for efficient daily operations.</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Tools used:</span> TurboTenant</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Result:</span> Streamlined property management with centralized information access, reducing time spent hunting for data across multiple screens.</p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Property Management</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Admin</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Dashboard</span>
+                  </div>
+                </div>
+                <!-- Description 2 -->
+                <div class="carousel-description hidden">
+                  <h3 class="text-lg font-semibold">Payment Tracking and Rent Collection</h3>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Context:</span> Property managers struggled to track payment status across multiple properties and tenants, leading to delayed follow-up on late payments.</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">My role:</span> Configured payment tracking dashboards, set up automatic reminders, and organized payment records for quick reference and reporting.</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Tools used:</span> TurboTenant</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Result:</span> Improved rent collection efficiency, reduced late payments, and streamlined reconciliation process.</p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Payment Management</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Admin</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Finance</span>
+                  </div>
+                </div>
+                <!-- Description 3 -->
+                <div class="carousel-description hidden">
+                  <h3 class="text-lg font-semibold">Lease Profile Management</h3>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Context:</span> Managers needed quick access to lease information, terms, and tenant details without searching through multiple documents.</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">My role:</span> Organized lease profiles with key information (term dates, rent amounts, renewal dates), created templates for consistency, and set up alerts for upcoming lease renewals.</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Tools used:</span> TurboTenant</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Result:</span> Centralized lease information improved renewal management and reduced missed renewal deadlines.</p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Lease Management</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Admin</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Organization</span>
+                  </div>
+                </div>
+                <!-- Description 4 -->
+                <div class="carousel-description hidden">
+                  <h3 class="text-lg font-semibold">Maintenance Request Tracking</h3>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Context:</span> Property managers struggled to track maintenance requests, prioritize repairs, and follow up with vendors without a clear system.</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">My role:</span> Set up maintenance request logging, created priority-based workflows, and established tracking for open vs. completed tickets with vendor communication logs.</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Tools used:</span> TurboTenant</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Result:</span> Faster response times to tenant maintenance issues, improved vendor accountability, and reduced liability from delayed repairs.</p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Maintenance Management</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Admin</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Tenant Relations</span>
+                  </div>
+                </div>
+                <!-- Description 5 -->
+                <div class="carousel-description hidden">
+                  <h3 class="text-lg font-semibold">Automated Tenant Communication System</h3>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Context:</span> Tenants frequently missed payment deadlines, lease renewal dates, and maintenance appointments due to lack of timely reminders.</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">My role:</span> Set up automated SMS and email reminder sequences for key dates (rent due, lease renewal, inspections), customized messaging for different tenant segments, and tracked delivery/open rates.</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Tools used:</span> Zoom Tenants, Automation, SMS/Email Integration</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Result:</span> Reduced late payments by 35%, improved tenant communication clarity, and decreased administrative follow-up workload.</p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Automation</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Communication</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Tenant Relations</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section: Design / Canva -->
+    <section class="border-b border-slate-200/60">
+      <div class="mx-auto max-w-6xl px-4 py-14">
+        <div class="reveal">
+          <h2 class="text-2xl font-semibold tracking-tight">Marketing Graphics</h2>
+          <p class="mt-2 text-slate-500">Marketing graphics and promotional videos designed for social media engagement.</p>
+        </div>
+
+        <div class="mt-8 reveal">
+          <div class="carousel-container rounded-3xl border border-slate-200 bg-slate-100/30 p-6">
+            <div class="grid gap-6 lg:grid-cols-2">
+              <!-- Left: Image/Video Viewer -->
+              <div>
+                <div class="carousel-viewer relative overflow-hidden rounded-2xl border border-slate-200 bg-white/50">
+                  <div class="carousel-slides">
+                    <!-- Slide 1 -->
+                    <img class="carousel-slide h-96 w-full object-cover" 
+                      src="images/graphic_samples/promotional_real_estate_images/rei_1.png" 
+                      alt="Canva Marketing Graphics Sample 1"
+                      data-lightbox-open="{&quot;src&quot;:&quot;images/graphic_samples/promotional_real_estate_images/rei_1.png&quot;,&quot;title&quot;:&quot;Real Estate Listing Promotion&quot;,&quot;context&quot;:&quot;A real estate agent needed a visually engaging social media graphic to promote a property listing and capture the attention of potential buyers online.&quot;,&quot;role&quot;:&quot;Designed a promotional property listing graphic that showcases the home&apos;s interior photos, key property details, and essential selling points in a clean, professional layout.&quot;,&quot;tools&quot;:[&quot;Canva&quot;],&quot;result&quot;:&quot;Produced a high-impact real estate marketing graphic optimized for social media, helping highlight the property and increase listing visibility.&quot;,&quot;tags&quot;:[&quot;Real Estate&quot;,&quot;Canva&quot;,&quot;Social Media Graphics&quot;,&quot;Property Listing&quot;,&quot;Marketing&quot;]}" />
+                    <!-- Slide 2 -->
+                    <img class="carousel-slide h-96 w-full object-cover hidden" 
+                      src="images/graphic_samples/promotional_real_estate_images/rei_2.png" 
+                      alt="Canva Marketing Graphics Sample 2"
+                      data-lightbox-open="{&quot;src&quot;:&quot;images/graphic_samples/promotional_real_estate_images/rei_2.png&quot;,&quot;title&quot;:&quot;Property Listing Social Media Graphic&quot;,&quot;context&quot;:&quot;A real estate agent needed a professional social media graphic to showcase a property listing and highlight key home features to potential buyers online.&quot;,&quot;role&quot;:&quot;Designed a property listing promotional graphic that combines interior photos, exterior views, and essential property details into a clean and visually engaging layout.&quot;,&quot;tools&quot;:[&quot;Canva&quot;],&quot;result&quot;:&quot;Created a visually appealing marketing graphic optimized for social media platforms, helping present the property clearly and attractively to prospective buyers.&quot;,&quot;tags&quot;:[&quot;Real Estate&quot;,&quot;Canva&quot;,&quot;Social Media Graphics&quot;,&quot;Property Listing&quot;,&quot;Marketing&quot;]}" />
+                    <!-- Slide 3 -->
+                    <img class="carousel-slide h-96 w-full object-cover hidden" 
+                      src="images/graphic_samples/promotional_real_estate_images/rei_3.png" 
+                      alt="Canva Marketing Graphics Sample 3"
+                      data-lightbox-open="{&quot;src&quot;:&quot;images/graphic_samples/promotional_real_estate_images/rei_3.png&quot;,&quot;title&quot;:&quot;Real Estate Marketing Post&quot;,&quot;context&quot;:&quot;A real estate agent needed a visually appealing social media graphic to showcase a property listing and highlight its interior and exterior features to attract potential buyers.&quot;,&quot;role&quot;:&quot;Designed a promotional property showcase graphic that combines high-quality property photos with key listing information such as address, property features, and square footage in a clean and modern layout.&quot;,&quot;tools&quot;:[&quot;Canva&quot;],&quot;result&quot;:&quot;Delivered a professional marketing graphic suitable for social media and online property promotion, helping present the listing clearly and attractively to prospective buyers.&quot;,&quot;tags&quot;:[&quot;Real Estate&quot;,&quot;Canva&quot;,&quot;Social Media Graphics&quot;,&quot;Property Listing&quot;,&quot;Marketing&quot;]}" />
+                    <!-- Slide 4 -->
+                    <img class="carousel-slide h-96 w-full object-cover hidden" 
+                      src="images/graphic_samples/promotional_real_estate_images/rei_4.png" 
+                      alt="Canva Marketing Graphics Sample 4"
+                      data-lightbox-open="{&quot;src&quot;:&quot;images/graphic_samples/promotional_real_estate_images/rei_4.png&quot;,&quot;title&quot;:&quot;Real Estate Sold Property Promotion&quot;,&quot;context&quot;:&quot;A real estate agent needed a promotional graphic to announce that a property had been successfully sold and to showcase the completed transaction on social media.&quot;,&quot;role&quot;:&quot;Designed a real estate marketing graphic highlighting the SOLD status of the property, featuring a clean interior photo of the home along with key property details such as 1,664 SQF - 3 Bed - 3 Bath to make the announcement visually engaging.&quot;,&quot;tools&quot;:[&quot;Canva&quot;],&quot;result&quot;:&quot;Created a clear and professional sold-property graphic optimized for social media, helping the agent build credibility, showcase successful sales, and attract potential future clients.&quot;,&quot;tags&quot;:[&quot;Real Estate&quot;,&quot;Canva&quot;,&quot;Sold Property&quot;,&quot;Social Media Graphics&quot;]}" />
+                    <!-- Slide 5 -->
+                    <img class="carousel-slide h-96 w-full object-cover hidden" 
+                      src="images/graphic_samples/promotional_real_estate_images/rei_5.png" 
+                      alt="Canva Marketing Graphics Sample 5"
+                      data-lightbox-open="{&quot;src&quot;:&quot;images/graphic_samples/promotional_real_estate_images/rei_5.png&quot;,&quot;title&quot;:&quot;Open House Event Marketing Graphic&quot;,&quot;context&quot;:&quot;A real estate agent needed a promotional graphic to announce an upcoming open house event and attract interested buyers through social media marketing.&quot;,&quot;role&quot;:&quot;Designed an open house promotional graphic that highlights the event schedule, property address, and key home features while showcasing multiple interior photos to give potential buyers a quick preview of the property.&quot;,&quot;tools&quot;:[&quot;Canva&quot;],&quot;result&quot;:&quot;Delivered a visually engaging social media graphic that helps promote the open house event and encourages potential buyers to visit and explore the property.&quot;,&quot;tags&quot;:[&quot;Real Estate&quot;,&quot;Canva&quot;,&quot;Open House Promotion&quot;,&quot;Social Media Graphics&quot;]}" />
+                    <!-- Slide 6 - video 1 -->
+                    <video class="carousel-slide h-96 w-full object-contain hidden" 
+                      src="videos/video_1.mp4"
+                      controls autoplay muted playsinline></video>
+                    <!-- Slide 7 - video 2 -->
+                    <video class="carousel-slide h-96 w-full object-contain hidden" 
+                      src="videos/video_2.mp4"
+                      controls autoplay muted playsinline></video>
+                    <!-- Slide 8 - video 3 -->
+                    <video class="carousel-slide h-96 w-full object-contain hidden" 
+                      src="videos/video_3.mp4"
+                      controls autoplay muted playsinline></video>
+                    <!-- Slide 9 - video 4 -->
+                    <video class="carousel-slide h-96 w-full object-contain hidden" 
+                      src="videos/video_4.mp4"
+                      controls autoplay muted playsinline></video>
+                    <!-- Slide 10 - video 5 -->
+                    <!-- <video class="carousel-slide h-96 w-full object-contain hidden" 
+                      src="videos/video_5.mp4"
+                      controls autoplay muted playsinline></video> -->
+                  </div>
+                  <!-- Navigation Arrows -->
+                  <button class="carousel-prev absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-2 hover:bg-white focus-ring z-10" aria-label="Previous slide">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                    </svg>
+                  </button>
+                  <button class="carousel-next absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-2 hover:bg-white focus-ring z-10" aria-label="Next slide">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                  </button>
+                </div>
+                <!-- Slide Counter -->
+                <div class="mt-3 text-center text-sm text-slate-500">
+                  <span class="carousel-current">1</span> / <span class="carousel-total">10</span>
+                </div>
+              </div>
+
+              <!-- Right: Description -->
+              <div class="carousel-descriptions">
+                <!-- Description 1 -->
+                <div class="carousel-description">
+                  <h3 class="text-lg font-semibold">Real Estate Listing Promotion</h3>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Context:</span> A real estate agent needed a visually engaging social media graphic to announce a new property listing and attract potential buyers online.</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">My role:</span> Designed a “Just Listed” promotional graphic featuring the home’s exterior image along with key property details such as 2 bedrooms, 2 bathrooms, and 1,269 sq ft, presented in a clean and attention-grabbing layout suitable for real estate marketing.</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Tools used:</span> Canva</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Result:</span> Created a professional listing announcement graphic optimized for social media, helping the agent highlight the new property, capture audience attention, and increase listing visibility.</p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Real Estate</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Canva</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Social Media Graphics</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Property Listing</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Marketing</span>
+                  </div>
+                </div>
+                <!-- Description 2 -->
+                <div class="carousel-description hidden">
+                  <h3 class="text-lg font-semibold">Property Listing Interior Showcase</h3>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Context:</span> As part of a real estate listing promotion, the agent needed a social media graphic highlighting the interior features of the property to give potential buyers a closer look at the home.</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">My role:</span> Designed a promotional graphic showcasing the kitchen and dining interior, emphasizing the home’s modern layout and key property details such as 3 bedrooms, 3 bathrooms, and 1,994 sq ft, along with contact information for inquiries.</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Tools used:</span> Canva</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Result:</span> Created a clean and visually appealing interior showcase graphic optimized for social media, helping the agent present the home’s interior spaces and attract potential buyers.</p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Real Estate</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Canva</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Social Media Graphics</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Property Listing</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Marketing</span>
+                  </div>
+                </div>
+                <!-- Description 3 -->
+                <div class="carousel-description hidden">
+                  <h3 class="text-lg font-semibold">Real Estate Interior Showcase</h3>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Context:</span> A real estate agent needed a visually engaging social media graphic to highlight the interior of a newly listed property and showcase the home’s design and living space to attract potential buyers.</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">My role:</span> Designed a property marketing graphic featuring a bright living room interior, combining high-quality property imagery with key listing details such as 3 bedrooms, 3 bathrooms, 1,994 sq ft, and the property year in a clean and professional layout.</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Tools used:</span> Canva </p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Result:</span> Produced a polished real estate marketing graphic optimized for social media, helping present the property’s interior space clearly while supporting the agent’s online listing promotion.</p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Real Estate</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Canva</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Social Media Graphics</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Property Listing</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Marketing</span>
+                  </div>
+                </div>
+                <!-- Description 4 -->
+                <div class="carousel-description hidden">
+                  <h3 class="text-lg font-semibold">Real Estate Sold Property Promotion</h3>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Context:</span> A real estate agent needed a promotional graphic to announce that a property had been successfully sold and to showcase the completed transaction on social media.</p>
+                  <p class="mt-2 text-latex-700"><span class="text-slate-500">My role:</span> Designed a real estate marketing graphic highlighting the SOLD status of the property, featuring a clean interior photo of the home along with key property details such as 1,664 SQF – 3 Bed – 3 Bath to make the announcement visually engaging.</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Tools used:</span> Canva</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Result:</span> Created a clear and professional sold-property graphic optimized for social media, helping the agent build credibility, showcase successful sales, and attract potential future clients.</p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Real Estate</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Canva</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Sold Property</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Social Media Graphics</span>
+                  </div>
+                </div>
+                <!-- Description 5 -->
+                <div class="carousel-description hidden">
+                  <h3 class="text-lg font-semibold">Open House Interior Showcase</h3>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Context:</span> A real estate agent required a social media graphic to promote an upcoming open house event while giving potential buyers a preview of the home’s interior spaces.</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">My role:</span> Designed an open house promotional graphic highlighting a bedroom interior, combining high-quality property imagery with key listing details such as 3 bedrooms, 3 bathrooms, and 1,994 sq ft, along with contact information for inquiries.</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Tools used:</span> Canva</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Result:</span> Produced a clean and engaging real estate marketing graphic optimized for social media, helping the agent promote the open house event and attract potential buyers to view the property.</p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Real Estate</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Canva</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Open House Promotion</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Social Media Graphics</span>
+                  </div>
+                </div>
+                <!-- Description 6 -->
+                <div class="carousel-description hidden">
+                  <h3 class="text-lg font-semibold">Real Estate Property Promotion Video</h3>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Context:</span> A real estate agent needed a short promotional video to showcase a property listing and capture attention on social media platforms.</p>
+                  <p class="mt-2 text-latex-700"><span class="text-slate-500">My role:</span> Created a property marketing video that highlights the home’s aerial view, key property details, and essential features such as bedrooms, bathrooms, and square footage in a clean and engaging layout.</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Tools used:</span> Capcut</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Result:</span> Produced a short real estate promotional video optimized for social media platforms, helping present the property in a more dynamic and engaging format to attract potential buyers.</p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Real Estate</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Video Editing</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Capcut</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Promotional Content</span>
+                  </div>
+                </div>
+                <!-- Description 7 -->
+                <div class="carousel-description hidden">
+                  <h3 class="text-lg font-semibold">Real Estate Property Tour Promotion Video</h3>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Context:</span> A real estate agent needed a short promotional video to encourage potential buyers to schedule a private tour of a listed property through social media marketing.</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">My role:</span> Designed and edited a property promotion video highlighting the home’s aerial view, key property details, and a clear call-to-action encouraging viewers to schedule a private tour.</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Tools used:</span> Capcut</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Result:</span> Created a dynamic real estate marketing video optimized for social media platforms, helping increase property interest and encouraging potential buyers to book a viewing.</p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Real Estate</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Video Editing</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Capcut</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Promotional Content</span>
+                  </div>
+                </div>
+                <!-- Description 8 -->
+                <div class="carousel-description hidden">
+                  <h3 class="text-lg font-semibold">Open House Property Promotion Video</h3>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Context:</span> A real estate agent needed a short promotional video to advertise an upcoming open house event and showcase the property’s key features to attract potential buyers.</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">My role:</span> Created a dynamic real estate promotional video combining aerial views and interior property shots with key listing details such as price, square footage, bedrooms, and bathrooms, while highlighting the Open House announcement to encourage viewers to visit the property.</p>
+                  <p class="mt-2 text-latex-700"><span class="text-slate-500">Tools used:</span> Capcut</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Result:</span> Produced an engaging open house promotional video optimized for social media, helping increase visibility for the event and drive interest from prospective buyers.</p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Real Estate</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Video Editing</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Capcut</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Promotional Content</span>
+                  </div>
+                </div>
+                <!-- Description 9 -->
+                <div class="carousel-description hidden">
+                  <h3 class="text-lg font-semibold">Private Tour Call-to-Action Property Video</h3>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Context:</span> A real estate agent needed a short promotional video to highlight a listed property and encourage potential buyers to schedule a private tour through social media marketing.</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">My role:</span> Created a real estate marketing video that showcases the property and surrounding area while incorporating key property details and a clear call-to-action inviting viewers to book a private tour.</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Tools used:</span> Capcut</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Result:</span> Delivered a dynamic property promotion video optimized for social media platforms, helping increase buyer interest and drive inquiries for private property viewings.</p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Real Estate</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Video Editing</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Capcut</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Promotional Content</span>
+                  </div>
+                </div>
+                <!-- Description 10 -->
+                <!-- <div class="carousel-description hidden">
+                  <h3 class="text-lg font-semibold">Open House Event Promotion Video</h3>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Context:</span> A real estate team needed a short promotional video to announce an upcoming open house event featuring multiple property listings and share key event details with potential buyers on social media.</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">My role:</span> Created an open house announcement video highlighting the event date, time, and participating property addresses while maintaining a clean and easy-to-read layout for viewers.</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Tools used:</span> Capcut</p>
+                  <p class="mt-2 text-slate-700"><span class="text-slate-500">Result:</span> Consistent brand identity across all marketing channels.</p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Real Estate</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Video Editing</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Capcut</span>
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-xs">Promotional Content</span>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10 reveal rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-50 to-slate-100 p-8">
+          <h3 class="text-xl font-semibold">Want niche-specific samples?</h3>
+          <p class="mt-2 text-slate-700">Tell me your tools and workflows — I’ll share the most relevant examples.</p>
+          <div class="mt-5 flex flex-col gap-3 sm:flex-row">
+            <a href="contact.html" class="inline-flex items-center justify-center rounded-xl bg-blue-500 px-5 py-3 text-sm font-semibold text-white hover:bg-blue-400 focus-ring">
+              Get In Touch
+            </a>
+            <a href="https://calendly.com/your-calendly-link" target="_blank" rel="noreferrer"
+               class="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold hover:bg-slate-100 focus-ring">
+              Book a Call →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox -->
+  <div data-lightbox class="hidden fixed inset-0 z-[100] overflow-y-auto">
+    <div data-lightbox-backdrop class="absolute inset-0 backdrop"></div>
+    <div class="relative mx-auto my-16 w-[92%] max-w-4xl rounded-3xl border border-slate-200 bg-white shadow-2xl">
+      <div class="flex items-start justify-between gap-4 border-b border-slate-200 p-5">
+        <div>
+          <h3 data-lightbox-title class="text-lg font-semibold">Preview</h3>
+          <p data-lightbox-desc class="mt-1 text-sm text-slate-500"></p>
+        </div>
+        <button data-lightbox-close class="rounded-xl border border-slate-200 bg-slate-100/40 p-2 hover:bg-slate-100 focus-ring" aria-label="Close preview">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <div class="grid gap-6 p-5 lg:grid-cols-2">
+        <div>
+          <img data-lightbox-img class="max-h-[60vh] w-full rounded-2xl border border-slate-200 object-contain bg-slate-100/30" src="" alt="Preview image"/>
+        </div>
+        <div class="space-y-4 overflow-y-auto max-h-[60vh]">
+          <div data-lightbox-details></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="border-t border-slate-200/60">
+    <div class="mx-auto max-w-6xl px-4 py-10 text-sm text-slate-500">
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <p>© <span data-year></span> Vincent Cuenza. All rights reserved.</p>
+        <div class="flex flex-wrap gap-3">
+          <a class="hover:text-slate-900" href="contact.html">Contact</a>
+          <a class="hover:text-slate-900" href="work.html">Work</a>
+          <a class="hover:text-slate-900" href="index.html">Home</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

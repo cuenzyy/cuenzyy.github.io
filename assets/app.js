@@ -1,0 +1,377 @@
+// assets/app.js
+
+// ---------- Helpers ----------
+const qs = (sel, root = document) => root.querySelector(sel);
+const qsa = (sel, root = document) => [...root.querySelectorAll(sel)];
+
+function lockBody(lock) {
+  document.documentElement.classList.toggle("overflow-hidden", lock);
+  document.body.classList.toggle("overflow-hidden", lock);
+}
+
+// ---------- Mobile Nav ----------
+function initNav() {
+  const btn = qs("[data-nav-toggle]");
+  const panel = qs("[data-nav-panel]");
+  const closeOnClickLinks = qsa("[data-nav-panel] a");
+
+  if (!btn || !panel) return;
+
+  const open = () => {
+    panel.classList.remove("hidden");
+    panel.classList.add("block");
+    btn.setAttribute("aria-expanded", "true");
+  };
+
+  const close = () => {
+    panel.classList.add("hidden");
+    panel.classList.remove("block");
+    btn.setAttribute("aria-expanded", "false");
+  };
+
+  btn.addEventListener("click", () => {
+    const isOpen = btn.getAttribute("aria-expanded") === "true";
+    isOpen ? close() : open();
+  });
+
+  closeOnClickLinks.forEach(a => {
+    a.addEventListener("click", () => close());
+  });
+
+  // Close menu on escape
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") close();
+  });
+}
+
+// ---------- Smooth scroll for in-page links ----------
+function initSmoothScroll() {
+  qsa('a[href^="#"]').forEach(a => {
+    a.addEventListener("click", (e) => {
+      const id = a.getAttribute("href");
+      const target = qs(id);
+      if (!target) return;
+
+      e.preventDefault();
+      const headerOffset = 84;
+      const rect = target.getBoundingClientRect();
+      const offsetTop = rect.top + window.pageYOffset - headerOffset;
+
+      window.scrollTo({ top: offsetTop, behavior: "smooth" });
+
+      // Update URL hash without jumping
+      history.pushState(null, "", id);
+    });
+  });
+}
+
+// ---------- Scroll Reveal Animations ----------
+function initReveal() {
+  const els = qsa(".reveal");
+  if (!els.length) return;
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("reveal-in");
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.14 });
+
+  els.forEach(el => io.observe(el));
+}
+
+// ---------- Project Modal (Work page) ----------
+function initProjectModal() {
+  const modal = qs("[data-modal]");
+  const modalTitle = qs("[data-modal-title]");
+  const modalBody = qs("[data-modal-body]");
+  const closeBtn = qs("[data-modal-close]");
+  const backdrop = qs("[data-modal-backdrop]");
+  const triggers = qsa("[data-open-modal]");
+
+  if (!modal || !triggers.length) return;
+
+  const open = (payload) => {
+    modalTitle.textContent = payload.title || "Project Details";
+    modalBody.innerHTML = `
+      <div class="space-y-4">
+        <div>
+          <p class="text-sm text-slate-500">Goal</p>
+          <p class="mt-1 text-slate-200">${payload.goal || "—"}</p>
+        </div>
+        <div>
+          <p class="text-sm text-slate-500">What I did</p>
+          <ul class="mt-1 list-disc pl-5 space-y-1 text-slate-200">
+            ${(payload.did || []).map(x => `<li>${x}</li>`).join("") || "<li>—</li>"}
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm text-slate-500">Tools used</p>
+          <div class="mt-2 flex flex-wrap gap-2">
+            ${(payload.tools || []).map(t => `
+              <span class="rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1 text-xs text-slate-200">${t}</span>
+            `).join("") || `<span class="text-slate-400 text-sm">—</span>`}
+          </div>
+        </div>
+        <div>
+          <p class="text-sm text-slate-500">Output / Result</p>
+          <p class="mt-1 text-slate-200">${payload.result || "—"}</p>
+        </div>
+      </div>
+    `;
+
+    modal.classList.remove("hidden");
+    lockBody(true);
+
+    // focus close button for accessibility
+    setTimeout(() => closeBtn?.focus(), 50);
+  };
+
+  const close = () => {
+    modal.classList.add("hidden");
+    lockBody(false);
+  };
+
+  triggers.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const data = btn.getAttribute("data-open-modal");
+      try {
+        const payload = JSON.parse(data);
+        open(payload);
+      } catch {
+        open({ title: "Project Details" });
+      }
+    });
+  });
+
+  closeBtn?.addEventListener("click", close);
+  backdrop?.addEventListener("click", close);
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !modal.classList.contains("hidden")) close();
+  });
+}
+
+// ---------- Gallery Lightbox ----------
+function initLightbox() {
+  const lb = qs("[data-lightbox]");
+  const img = qs("[data-lightbox-img]");
+  const title = qs("[data-lightbox-title]");
+  const details = qs("[data-lightbox-details]");
+  const closeBtn = qs("[data-lightbox-close]");
+  const backdrop = qs("[data-lightbox-backdrop]");
+  const triggers = qsa("[data-lightbox-open]");
+
+  if (!lb || !triggers.length) return;
+
+  const open = (payload) => {
+    img.src = payload.src;
+    img.alt = payload.title || "Preview";
+    title.textContent = payload.title || "Preview";
+    
+    // Populate detailed information with all 4 fields
+    let detailsHTML = `<div class="space-y-5">`;
+    
+    if (payload.context) {
+      detailsHTML += `
+        <div>
+          <p class="text-sm font-semibold text-slate-900">Context</p>
+          <p class="mt-1.5 text-sm text-slate-600 leading-relaxed">${payload.context}</p>
+        </div>
+      `;
+    }
+    
+    if (payload.role) {
+      detailsHTML += `
+        <div>
+          <p class="text-sm font-semibold text-slate-900">My role</p>
+          <p class="mt-1.5 text-sm text-slate-600 leading-relaxed">${payload.role}</p>
+        </div>
+      `;
+    }
+    
+    if (payload.tools && payload.tools.length) {
+      detailsHTML += `
+        <div>
+          <p class="text-sm font-semibold text-slate-900">Tools used</p>
+          <div class="mt-2 flex flex-wrap gap-2">
+            ${payload.tools.map(t => `<span class="rounded-full border border-slate-300 bg-slate-100 px-3 py-1 text-xs text-slate-700">${t}</span>`).join("")}
+          </div>
+        </div>
+      `;
+    }
+    
+    if (payload.result) {
+      detailsHTML += `
+        <div>
+          <p class="text-sm font-semibold text-slate-900">Result</p>
+          <p class="mt-1.5 text-sm text-slate-600 leading-relaxed">${payload.result}</p>
+        </div>
+      `;
+    }
+    
+    if (payload.tags && payload.tags.length) {
+      detailsHTML += `
+        <div>
+          <div class="mt-4 flex flex-wrap gap-2">
+            ${payload.tags.map(tag => `<span class="rounded-full border border-slate-700 px-3 py-1 text-xs">${tag}</span>`).join("")}
+          </div>
+        </div>
+      `;
+    }
+    
+    detailsHTML += `</div>`;
+    
+    details.innerHTML = detailsHTML;
+    
+    lb.classList.remove("hidden");
+    lockBody(true);
+    setTimeout(() => closeBtn?.focus(), 50);
+  };
+
+  const close = () => {
+    lb.classList.add("hidden");
+    lockBody(false);
+  };
+
+  triggers.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const data = btn.getAttribute("data-lightbox-open");
+      try {
+        const payload = JSON.parse(data);
+        open(payload);
+      } catch (e) {
+        console.error("Error parsing lightbox data:", e);
+        open({ src: btn.getAttribute("data-src") || "", title: "Preview" });
+      }
+    });
+  });
+
+  closeBtn?.addEventListener("click", close);
+  backdrop?.addEventListener("click", close);
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !lb.classList.contains("hidden")) close();
+  });
+}
+
+// ---------- Gallery Carousel ----------
+function initCarousels() {
+  qsa(".carousel-container").forEach(container => {
+    const prevBtn = qs(".carousel-prev", container);
+    const nextBtn = qs(".carousel-next", container);
+    const slides = qsa(".carousel-slide", container);
+    const descriptions = qsa(".carousel-description", container);
+    const currentSpan = qs(".carousel-current", container);
+    const totalSpan = qs(".carousel-total", container);
+
+    if (!slides.length || !descriptions.length) return;
+
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+
+    // Update total count
+    if (totalSpan) totalSpan.textContent = totalSlides;
+
+    const showSlide = (index) => {
+      // Hide all slides and descriptions
+      slides.forEach(s => s.classList.add("hidden"));
+      descriptions.forEach(d => d.classList.add("hidden"));
+
+      // Show current slide and description
+      slides[index].classList.remove("hidden");
+      descriptions[index].classList.remove("hidden");
+
+      // Update counter
+      if (currentSpan) currentSpan.textContent = index + 1;
+
+      // Disable prev button on first slide, next button on last slide
+      if (prevBtn) prevBtn.disabled = index === 0;
+      if (nextBtn) nextBtn.disabled = index === totalSlides - 1;
+    };
+
+    prevBtn?.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        showSlide(currentIndex);
+      }
+    });
+
+    nextBtn?.addEventListener("click", () => {
+      if (currentIndex < totalSlides - 1) {
+        currentIndex++;
+        showSlide(currentIndex);
+      }
+    });
+
+    // Initialize first slide
+    showSlide(0);
+  });
+}
+
+// ---------- Contact Form with EmailJS ----------
+function initContactForm() {
+  const contactForm = qs("#contactForm");
+  if (!contactForm) return;
+
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const sendBtn = qs("#sendMessageBtn");
+    const originalBtnText = sendBtn.textContent;
+    
+    try {
+      sendBtn.disabled = true;
+      sendBtn.textContent = "Sending...";
+
+      const response = await emailjs.sendForm(
+        "service_kyqcg9l",
+        "template_aguep2q",
+        contactForm
+      );
+
+      sendBtn.textContent = "Message Sent! ✓";
+      sendBtn.classList.add("bg-green-500", "hover:bg-green-600");
+      sendBtn.classList.remove("bg-blue-500", "hover:bg-blue-600");
+
+      contactForm.reset();
+
+      setTimeout(() => {
+        sendBtn.textContent = originalBtnText;
+        sendBtn.classList.remove("bg-green-500", "hover:bg-green-600");
+        sendBtn.classList.add("bg-blue-500", "hover:bg-blue-600");
+        sendBtn.disabled = false;
+      }, 3000);
+
+    } catch (error) {
+      console.error("Error:", error);
+      sendBtn.textContent = "Failed. Try again.";
+      sendBtn.classList.add("bg-red-500", "hover:bg-red-600");
+      sendBtn.classList.remove("bg-blue-500", "hover:bg-blue-600");
+
+      setTimeout(() => {
+        sendBtn.textContent = originalBtnText;
+        sendBtn.classList.remove("bg-red-500", "hover:bg-red-600");
+        sendBtn.classList.add("bg-blue-500", "hover:bg-blue-600");
+        sendBtn.disabled = false;
+      }, 3000);
+    }
+  });
+}
+
+// ---------- Init ----------
+document.addEventListener("DOMContentLoaded", () => {
+  initNav();
+  initSmoothScroll();
+  initReveal();
+  initProjectModal();
+  initLightbox();
+  initCarousels();
+  initContactForm();
+
+  // Set current year
+  const y = qs("[data-year]");
+  if (y) y.textContent = new Date().getFullYear();
+});

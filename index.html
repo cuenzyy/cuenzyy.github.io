@@ -1,274 +1,412 @@
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>QA Engineer Portfolio</title>
-      <script src="https://cdn.tailwindcss.com"></script>
-   </head>
-   <body class="bg-gradient-to-b from-blue-200 to-white text-gray-800 font-sans">
-      <!-- Navbar -->
-      <header class="bg-white shadow sticky top-0 z-50">
-         <div class="container mx-auto flex justify-between items-center py-4 px-6">
-            <!-- Logo instead of Portfolio text -->
-            <a href="index.html">
-            <img src="images/cv_logo.png" alt="Portfolio Logo" class="h-8 w-auto">
-            </a>
-            <!-- Navigation -->
-            <nav class="hidden md:flex space-x-6 items-center">
-               <!-- nav of home -->
-               <div class="relative group">
-                  <a href="index.html" class="text-sm font-medium hover:text-blue-500 inline-flex items-center px-1 py-2">
-                     Home
-                     <svg class="w-2.5 h-2.5 ml-1 text-gray-500 group-hover:text-blue-500 transition-colors duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 18">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-                     </svg>
-                  </a>
-                  <div class="absolute left-0 mt-2 w-40 bg-white border border-gray-200 shadow-lg rounded-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 group-hover:translate-y-0 translate-y-2 z-10">
-                     <a href="index.html#about" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">About Me</a>
-                     <a href="index.html#technologies" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Technologies</a>
-                     <a href="index.html#tech-skills" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Technical Skills</a>
-                     <a href="index.html#analytical-skills" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Analytical & Strategic Skills</a>
-                     <a href="index.html#collaborationncomunnication" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Collaboration & Communication</a>
-                     <a href="index.html#soft-skills" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Soft Skills</a>
-                  </div>
-               </div>
-               
-               <!-- nav of work experience -->
-               <div class="relative group">
-                  <a href="work-experience.html" class="text-sm font-medium hover:text-blue-500 inline-flex items-center px-1 py-2">Work Experience
-                     <svg class="w-2.5 h-2.5 ml-1 text-gray-500 group-hover:text-blue-500 transition-colors duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 18">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-                     </svg>
-                  </a>
-                  <div class="absolute left-0 mt-2 w-40 bg-white border border-gray-200 shadow-lg rounded-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 group-hover:translate-y-0 translate-y-2 z-10">
-                     <a href="work-experience.html#projects" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Projects</a>
-                     <a href="work-experience.html#testimonials" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Professional Testimonials & Recommendations</a>
-                  </div>
-               </div>
-               <a href="certifications_n_trainings.html" class="text-sm font-medium hover:text-blue-500 px-1 py-2">Certifications and Trainings</a>
-               <a href="social-media.html" class="text-sm font-medium hover:text-blue-500 px-1 py-2">Social Media</a>
-               <a href="contact.html" class="text-sm font-medium hover:text-blue-500 px-1 py-2">Contact</a>
-            </nav>
-         </div>
-      </header>
+<!doctype html>
+<html lang="en" class="bg-white text-slate-900">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vincent Cuenza — Portfolio</title>
+  <meta name="description" content="Modern Virtual Assistant portfolio — Admin Support, CRM, Property Management, Lead Gen, Automation." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
 
-<!-- Hero Section -->
-<section id="home" class="flex flex-col md:flex-row min-h-screen bg-white text-gray-800">
-    <!-- Left Side -->
-    <div class="w-full md:w-1/2 relative">
-        <img src="images/vincent.png" alt="Vincent QA Engineer"
-             class="w-full h-full object-cover rounded-none md:rounded-r-3xl shadow-xl" />
-        <div class="absolute inset-0"></div>
+<body class="min-h-screen bg-white text-slate-900">
+  <!-- Top Nav -->
+  <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="flex h-16 items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="grid h-9 w-9 place-items-center ring-slate-200">
+            <img src="images/cv_logo.png" alt="CV Logo" />
+          </div>
+          <div class="leading-tight">
+            <p class="text-sm font-semibold">Vincent Cuenza</p>
+            <p class="text-xs text-slate-500">Virtual Assistant</p>
+          </div>
+        </a>
+
+        <nav class="hidden items-center gap-6 lg:flex">
+          <a class="text-sm text-slate-700 hover:text-slate-900" href="index.html">Home</a>
+          <a class="text-sm text-slate-700 hover:text-slate-900" href="work.html">Work Experience</a>
+          <a class="text-sm text-slate-700 hover:text-slate-900" href="certifications.html">Certifications</a>
+          <a class="text-sm text-slate-700 hover:text-slate-900" href="gallery.html">Galleries</a>
+          <a class="text-sm text-slate-700 hover:text-slate-900" href="social.html">Social Media</a>
+          <a class="text-sm text-slate-700 hover:text-slate-900" href="contact.html">Contact</a>
+
+          <a href="contact.html"
+             class="rounded-xl bg-blue-500 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-600 focus-ring">
+            Hire Me
+          </a>
+        </nav>
+
+        <!-- Hamburger -->
+        <button data-nav-toggle aria-expanded="false"
+          class="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-slate-100 p-2 hover:bg-slate-200 lg:hidden focus-ring"
+          aria-label="Open Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Panel -->
+      <div data-nav-panel class="hidden pb-4 lg:hidden">
+        <div class="space-y-2 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+          <div class="grid gap-2">
+            <a class="rounded-xl px-3 py-2 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="index.html">Home</a>
+            <a class="rounded-xl px-3 py-2 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="work.html">Work Experience</a>
+            <a class="rounded-xl px-3 py-2 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="certifications.html">Certifications & Trainings</a>
+            <a class="rounded-xl px-3 py-2 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="gallery.html">Galleries of my Work</a>
+            <a class="rounded-xl px-3 py-2 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="social.html">Social Media</a>
+            <a class="rounded-xl px-3 py-2 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="contact.html">Contact</a>
+          </div>
+
+          <div class="mt-3 border-t border-slate-200 pt-3">
+            <p class="text-xs font-semibold text-slate-500">Quick Jump (Home)</p>
+            <div class="mt-2 grid gap-2">
+              <a class="rounded-xl px-3 py-2 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="#hero">Home (Hero)</a>
+              <a class="rounded-xl px-3 py-2 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="#about">About Me</a>
+              <a class="rounded-xl px-3 py-2 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="#skills">Skills & Software/Tools</a>
+              <a class="rounded-xl px-3 py-2 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="#featured">Featured Work</a>
+            </div>
+          </div>
+
+          <a href="contact.html"
+             class="mt-3 inline-flex w-full items-center justify-center rounded-xl bg-blue-500 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-600 focus-ring">
+            Hire Me
+          </a>
+        </div>
+      </div>
     </div>
+  </header>
 
-    <!-- Right Side -->
-    <div class="w-full md:w-1/2 flex flex-col justify-center items-start px-10 py-16 space-y-6">
-        <h1 class="text-5xl font-extrabold leading-tight text-gray-900">Hello, I'm Vincent</h1>
-        <h2 class="text-3xl font-semibold text-blue-700">Senior QA Engineer</h2>
-        <p class="text-lg text-gray-700 leading-relaxed">
-            I’m a passionate Quality Assurance Engineer focused on delivering flawless digital experiences.
-            I specialize in thorough testing and smart automation to help create products users truly trust.
-        </p>
-        <div class="mt-4 flex flex-col sm:flex-row gap-4">
-            <a href="work-experience.html" target="_blank"
-               class="bg-blue-700 text-white px-6 py-2 rounded-xl shadow-md hover:bg-blue-800 transition">
-                View My Work
-            </a>
-            <a href="https://drive.google.com/file/d/1NZHs53M8DNMMWAM_JlMCjBaRqq8FJjfJ/view?usp=sharing" download
-               class="border border-blue-700 text-blue-700 px-6 py-2 rounded-xl shadow-md hover:bg-blue-700 hover:text-white transition" target="_blank">
+  <!-- HERO -->
+  <main>
+    <section id="hero" class="relative overflow-hidden">
+      <!-- blobs -->
+      <div class="pointer-events-none absolute -top-28 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-blue-300/40 blur-3xl blob"></div>
+      <div class="pointer-events-none absolute -bottom-28 right-10 h-72 w-72 rounded-full bg-indigo-300/40 blur-3xl blob" style="animation-delay: -2s"></div>
+
+      <div class="mx-auto max-w-6xl px-4 py-14 md:py-20">
+        <div class="grid items-center gap-10 md:grid-cols-2">
+          <!-- image -->
+          <div class="reveal">
+            <div class="relative mx-auto max-w-sm">
+              <div class="absolute -inset-3 rounded-3xl bg-gradient-to-br from-blue-200/70 to-indigo-200/70 blur-2xl"></div>
+              <img src="images/vincent.png" alt="Your photo"
+                   class="relative w-full rounded-3xl border border-slate-200 bg-white p-2 shadow-xl floaty" />
+            </div>
+          </div>
+
+          <!-- content -->
+          <div class="reveal">
+            <p class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-xs text-slate-700">
+              <span class="h-2 w-2 rounded-full bg-blue-500"></span>
+              Available for VA Roles • Remote • Flexible with All Time Zones (UTC+8)
+            </p>
+
+            <h1 class="mt-5 text-4xl font-semibold tracking-tight md:text-5xl">
+              Virtual Assistant focused on clean systems, fast execution, and client-ready deliverables.
+            </h1>
+
+            <p class="mt-4 text-slate-700">
+              I support teams with admin operations, CRM management, property/real estate workflows, lead generation, documentation,
+              and automation.
+              <!-- <span class="text-slate-500">(This content is ready to be replaced with your CV-based summary.)</span> -->
+            </p>
+
+            <div class="mt-7 flex flex-col gap-3 sm:flex-row">
+              <a href="gallery.html"
+                 class="inline-flex items-center justify-center rounded-xl bg-blue-500 px-5 py-3 text-sm font-semibold text-white hover:bg-blue-600 focus-ring">
+                View Work
+              </a>
+
+              <a href="https://drive.google.com/file/d/12coCJHZmvr41O8IXn9VB9CP3jaWW3kTL/view?usp=sharing" target="_blank" rel="noreferrer"
+                 class="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold hover:bg-slate-100 focus-ring">
                 Download Resume
+              </a>
+
+              <a href="contact.html"
+                 class="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-slate-50 px-5 py-3 text-sm font-semibold hover:bg-slate-100 focus-ring">
+                Hire Me
+              </a>
+            </div>
+
+            <div class="mt-8 flex flex-wrap items-center gap-3 text-sm text-slate-600">
+              <a href="https://linkedin.com/in/vincent-cuenza" target="_blank" rel="noreferrer"
+                 class="rounded-xl border border-slate-200 bg-white px-4 py-2 hover:bg-slate-100 focus-ring">
+                LinkedIn • View Profile →
+              </a>
+
+              <a href="https://calendly.com/vincentcuenza-work/30min" target="_blank" rel="noreferrer"
+                 class="rounded-xl border border-slate-200 bg-white px-4 py-2 hover:bg-slate-100 focus-ring">
+                Book a Call →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="border-t border-slate-200">
+      <div class="mx-auto max-w-6xl px-4 py-14">
+        <div class="grid gap-10 lg:grid-cols-3">
+          <div class="lg:col-span-1 reveal">
+            <h2 class="text-2xl font-semibold tracking-tight">About Me</h2>
+            <p class="mt-2 text-slate-500">
+              A quick overview of my skills, experience, and the value I bring.
+            </p>
+          </div>
+
+          <div class="lg:col-span-2 reveal">
+            <div class="rounded-3xl border border-slate-200 bg-slate-50 p-7">
+              <p class="text-slate-800 leading-relaxed">
+                I’m a Virtual Assistant specializing in end-to-end support: inbox and calendar management, CRM updates,
+                data cleanup, lead list building, reporting, SOP documentation, and client communication.
+                I’m detail-oriented, process-driven, and comfortable working with multiple tools and fast-changing priorities.
+                <!-- <span class="text-slate-500">Replace this paragraph with your CV-based summary when ready.</span> -->
+              </p>
+
+              <div class="mt-6 flex flex-wrap gap-2">
+                <!-- niche pills (edit based on CV later) -->
+                <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Admin Support</span>
+                <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">CRM Management</span>
+                <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Property Management</span>
+                <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Real Estate VA</span>
+                <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Data Entry</span>
+                <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Lead Generation</span>
+                <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">SOP / Documentation</span>
+                <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Automation Support</span>
+              </div>
+
+              <div class="mt-6 flex flex-wrap gap-3">
+                <a href="work.html"
+                   class="rounded-xl bg-blue-500 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-600 focus-ring">
+                  Explore Experience
+                </a>
+                <a href="https://linkedin.com/in/your-linkedin" target="_blank" rel="noreferrer"
+                   class="rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-semibold hover:bg-slate-100 focus-ring">
+                  Connect on LinkedIn
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="border-t border-slate-200">
+      <div class="mx-auto max-w-6xl px-4 py-14">
+        <div class="flex flex-col gap-2 reveal">
+          <h2 class="text-2xl font-semibold tracking-tight">Skills & Software/Tools</h2>
+          <p class="text-slate-500">Tools and platforms I use to manage operations, communication, and client workflows.</p>
+        </div>
+
+        <div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <!-- card -->
+          <div class="reveal rounded-3xl border border-slate-200 bg-slate-50 p-6 hover:bg-slate-100 transition">
+            <p class="text-sm font-semibold">Admin & Operations</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Calendar Management</span>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Email Handling</span>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Data Entry</span>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">File Organization</span>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">SOP Writing</span>
+            </div>
+          </div>
+
+          <div class="reveal rounded-3xl border border-slate-200 bg-slate-50 p-6 hover:bg-slate-100 transition">
+            <p class="text-sm font-semibold">CRM & CMS</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">HubSpot</span>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Salesforce</span>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Zoho CRM</span>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Podio</span>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Working experience with GoHighLevel</span>
+              
+            </div>
+          </div>
+
+          <div class="reveal rounded-3xl border border-slate-200 bg-slate-50 p-6 hover:bg-slate-100 transition">
+            <p class="text-sm font-semibold">Dialer & Communication App</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">RingCentral</span>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">8x8 Dialer</span>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Power Dialers</span>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Dialpad</span>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Aircall</span>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Slack</span>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Zoom</span>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Gmail</span>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Outlook</span>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Microsoft Teams</span>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">WhatsApp</span>
+            </div>
+          </div>
+
+          <div class="reveal rounded-3xl border border-slate-200 bg-slate-50 p-6 hover:bg-slate-100 transition">
+            <p class="text-sm font-semibold">Design & Marketing Tools</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Canva</span>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Photoshop</span>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Illustrator</span>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Premiere Pro</span>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Capcut</span>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Mailchimp</span>
+            </div>
+          </div>
+
+          <div class="reveal rounded-3xl border border-slate-200 bg-slate-50 p-6 hover:bg-slate-100 transition">
+            <p class="text-sm font-semibold">Automation Tools</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Zapier</span>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">N8N</span>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Power Automate</span>
+            </div>
+          </div>
+
+          <div class="reveal rounded-3xl border border-slate-200 bg-slate-50 p-6 hover:bg-slate-100 transition">
+            <p class="text-sm font-semibold">Productivity & Collaboration Tools</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Google Workspace</span>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Microsoft 365</span>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Sharepoint</span>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">JIRA</span>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">ClickUp</span>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Trello</span>
+            </div>
+          </div>
+
+          <div class="reveal rounded-3xl border border-slate-200 bg-slate-50 p-6 hover:bg-slate-100 transition">
+            <p class="text-sm font-semibold">Scheduling Tools</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Calendly</span>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Google Calendar</span>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Teams Calendar</span>
+            </div>
+          </div>
+
+          <div class="reveal rounded-3xl border border-slate-200 bg-slate-50 p-6 hover:bg-slate-100 transition">
+            <p class="text-sm font-semibold">Payment & Processing Platforms</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">ACI Payments Inc</span>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Oolio Pay</span>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Braintree</span>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">WPay</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED GALLERY PREVIEW -->
+    <section id="featured" class="border-t border-slate-200">
+      <div class="mx-auto max-w-6xl px-4 py-14">
+        <div class="flex items-end justify-between gap-6 reveal">
+          <div>
+            <h2 class="text-2xl font-semibold tracking-tight">Featured Work</h2>
+            <p class="mt-2 text-slate-500">A quick preview of selected work samples. Explore full galleries for more.</p>
+            <p class="text-sm text-blue-400">
+              Note: details in images and videos are blurred for security purposes.
+            </p>
+          </div>
+          <a href="gallery.html"
+             class="hidden rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-semibold hover:bg-slate-100 focus-ring sm:inline-flex">
+            View All Galleries →
+          </a>
+        </div>
+
+        <div class="mt-8 grid gap-6 lg:grid-cols-3">
+          <!-- card -->
+          <div class="reveal rounded-3xl border border-slate-200 bg-slate-50 p-6 hover:bg-slate-100 transition">
+            <div class="flex items-start justify-between gap-3">
+              <p class="font-semibold">Property Management Assistant (Remote)</p>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">CRM</span>
+            </div>
+            <p class="mt-3 text-sm text-slate-700">
+              Organized and updated lead records, cleaned contact data, and maintained CRM pipelines to support accurate tracking and follow-ups.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">HubSpot</span>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Podio</span>
+            </div>
+          </div>
+
+          <div class="reveal rounded-3xl border border-slate-200 bg-slate-50 p-6 hover:bg-slate-100 transition">
+            <div class="flex items-start justify-between gap-3">
+              <p class="font-semibold">Canva Marketing Graphics</p>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Design</span>
+            </div>
+            <p class="mt-3 text-sm text-slate-700">
+              Designed high-conversion marketing collateral using Canva, producing professional flyers, social media assets, and digital ads aligned with brand standards.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Canva</span>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Brand Kit</span>
+            </div>
+          </div>
+
+          <div class="reveal rounded-3xl border border-slate-200 bg-slate-50 p-6 hover:bg-slate-100 transition">
+            <div class="flex items-start justify-between gap-3">
+              <p class="font-semibold">SOP + Call Script Pack</p>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Docs</span>
+            </div>
+            <p class="mt-3 text-sm text-slate-700">
+              Documented a structured cold-calling workflow used to qualify motivated property sellers. Includes call flow, objection handling, lead tagging, and appointment booking process for acquisition managers.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Google Docs</span>
+              <span class="rounded-full border border-slate-300 bg-white px-3 py-1 text-xs text-slate-700">Calendly</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 sm:hidden">
+          <a href="gallery.html"
+             class="inline-flex w-full items-center justify-center rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-semibold hover:bg-slate-100 focus-ring">
+            View All Galleries →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOME FOOTER CTA -->
+    <section class="border-t border-slate-200">
+      <div class="mx-auto max-w-6xl px-4 py-14">
+        <div class="reveal rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-8 md:p-10 shadow-sm">
+          <h3 class="text-2xl font-semibold tracking-tight">Ready to Work Together?</h3>
+          <p class="mt-3 max-w-2xl text-slate-700">
+            Let’s connect and explore how I can support your team and help bring your vision to life.
+          </p>
+          <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+            <a href="contact.html"
+               class="inline-flex items-center justify-center rounded-xl bg-blue-500 px-5 py-3 text-sm font-semibold text-white hover:bg-blue-600 focus-ring">
+              Get In Touch
             </a>
+            <a href="https://linkedin.com/in/your-linkedin" target="_blank" rel="noreferrer"
+               class="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold hover:bg-slate-100 focus-ring">
+              LinkedIn →
+            </a>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
+  </main>
 
-
-
-
-
-      <!-- About Me Section -->
-      <section class="py-20 bg-white" id="about">
-    <div class="container mx-auto px-4 max-w-5xl">
-        <h2 class="text-3xl font-extrabold text-gray-900 mb-4">About Me</h2>
-        <p class="text-gray-700 leading-relaxed mb-6">
-            I’m a dedicated Quality Assurance Engineer passionate about delivering exceptional digital experiences. I bring sharp attention to detail, deep technical insight, and a strategic mindset to every project.
-        </p>
-        <p class="text-gray-700 leading-relaxed mb-6">
-            Over the past 3 years, I’ve built expertise in both manual and automated testing. I spent more than 2 years mastering manual testing—uncovering edge cases, digging deep into details, and ensuring flawless functionality. Recently, I’ve shifted focus to automation—building initial frameworks and preparing our team for future automation adoption.
-        </p>
-        <p class="text-gray-700 leading-relaxed mb-6">
-            I’ve worked hands-on with platforms like Deliverit, Oolio, DoorDash, UberEATS, Menulog, and Google Food Ordering, making sure each one hits peak performance and reliability benchmarks.
-        </p>
-        <p class="text-gray-700 leading-relaxed mb-8">
-            My process combines end-to-end testing strategies with modern automation tools to deliver software that exceeds expectations. Whether it's hunting elusive bugs or building scalable test suites, I’m committed to quality at every step.
-        </p>
-
-        <div class="flex flex-wrap gap-3 text-sm">
-            <span class="bg-blue-100 text-blue-700 px-4 py-1 rounded-full font-medium">Test Automation</span>
-            <span class="bg-blue-100 text-blue-700 px-4 py-1 rounded-full font-medium">Quality Assurance</span>
-            <span class="bg-blue-100 text-blue-700 px-4 py-1 rounded-full font-medium">Bug Detection</span>
-            <span class="bg-blue-100 text-blue-700 px-4 py-1 rounded-full font-medium">Team Collaboration</span>
+  <footer class="border-t border-slate-200">
+    <div class="mx-auto max-w-6xl px-4 py-10 text-sm text-slate-500">
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <p>© <span data-year></span> Vincent Cuenza. All rights reserved.</p>
+        <div class="flex flex-wrap gap-3">
+          <a class="hover:text-slate-900" href="contact.html">Contact</a>
+          <a class="hover:text-slate-900" href="gallery.html">Galleries</a>
+          <a class="hover:text-slate-900" href="work.html">Work</a>
         </div>
+      </div>
     </div>
-</section>
+  </footer>
 
-      <!-- Technologies -->
-      <section class="py-20 bg-blue-50" id="technologies">
-    <div class="container mx-auto px-4 max-w-5xl">
-        <h2 class="text-3xl font-extrabold text-gray-900 mb-2">Technologies Acquired</h2>
-        <p class="text-gray-700 mb-8">
-            These are the tools and platforms I’ve mastered throughout my QA journey—ranging from automation to DevOps and cloud services.
-        </p>
-
-        <!-- Categories -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-sm">
-            <!-- Testing Tools -->
-            <div>
-                <h3 class="font-semibold text-gray-900 mb-2">Testing & Automation</h3>
-                <div class="flex flex-wrap gap-2">
-                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Playwright(Framework Built)</span>
-                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Selenium</span>
-                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Postman</span>
-                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Apache JMeter</span>
-                </div>
-            </div>
-
-            <!-- Cloud Services -->
-            <div>
-                <h3 class="font-semibold text-gray-900 mb-2">AWS & Cloud</h3>
-                <div class="flex flex-wrap gap-2">
-                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">AWS Lambda</span>
-                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">AWS S3</span>
-                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">AWS CloudWatch</span>
-                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">AWS Step Function</span>
-                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">AWS AppSync</span>
-                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">AWS DynamoDB</span>
-                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">AWS CodeCommit</span>
-                </div>
-            </div>
-
-            <!-- DevOps & Other Tools -->
-            <div>
-                <h3 class="font-semibold text-gray-900 mb-2">DevOps & Utilities</h3>
-                <div class="flex flex-wrap gap-2">
-                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Jenkins</span>
-                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Ngrok</span>
-                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">GitHub</span>
-                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">SQL</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-      <!-- Technical Testing Skills -->
-      <section class="py-12 bg-white" id="tech-skills">
-         <div class="container mx-auto px-4 max-w-5xl">
-            <h2 class="text-3xl font-extrabold text-gray-900 mb-2">Technical Testing Skills</h2>
-            <div class="flex flex-wrap gap-2 text-sm">
-               <ul class="list-disc list-inside">
-                  <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Test Planning & Strategy</span> – I create clear test plans that outline what we’re testing, why, and how.</li>
-                  <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Manual Testing Expertise</span> – Hands-on experience with exploratory, regression, smoke, sanity, and UAT testing.</li>
-                  <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Automation Testing</span> – Experienced with Selenium and Cypress. I also developed a Playwright framework that is ready for future adoption once team capacity allows it.</li>
-                  <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">API Testing</span> – Skilled in testing APIs using Postman, REST Assured, or similar tools.</li>
-                  <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Performance & Load Testing</span> – Familiar with tools like JMeter and Postman for load and stress testing.</li>
-                  <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">CI/CD Integration</span> – Know how to plug tests into CI/CD pipelines with Jenkins, GitHub Actions, or GitLab CI.</li>
-                  <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Version Control</span> – Solid understanding of Git and how to work with it efficiently.</li>
-               </ul>
-            </div>
-         </div>
-      </section>
-      <!-- Analytical & Strategic Skills -->
-      <section class="py-12 bg-white-50" id="analytical-skills">
-         <div class="container mx-auto px-4 max-w-5xl">
-         <h2 class="text-3xl font-extrabold text-gray-900 mb-2">Analytical & Strategic Skills</h2>
-         <div class="flex flex-wrap gap-2 text-sm">
-            <ul class="list-disc list-inside">
-               <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Root Cause Analysis</span> – Going beyond the surface to understand and explain issues clearly.</li>
-               <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Risk-Based Testing</span> – Prioritizing testing efforts based on impact and likelihood.</li>
-               <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Data Analysis</span> – Using logs, monitoring tools, and metrics to guide quality decisions</li>
-            </ul>
-         </div>
-      </section>
-      <!-- Collaboration & Communication -->
-      <section class="py-12 bg-white" id="collaborationncomunnication">
-         <div class="container mx-auto px-4 max-w-5xl">
-            <h2 class="text-3xl font-extrabold text-gray-900 mb-2">Collaboration & Communication</h2>
-            <div class="flex flex-wrap gap-2 text-sm">
-               <ul class="list-disc list-inside">
-                  <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Team Collaboration</span> – I work closely with devs, product managers, and designers to catch issues early.</li>
-                  <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Clear Reporting & Documentation</span> – I keep things simple and clear, whether it’s bug reports, tickets, or documentation, so everyone’s on the same page.</li>
-                  <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Sharing Test Result</span> – I communicate test outcomes and risks in a way that makes sense to both tech and non-tech teams.</li>
-                  <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Feedback Culture</span> – I give and take feedback to help improve the product and how we work.</li>
-                  <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Mentoring</span> – I support junior QAs and share what I’ve learned along the way.</li>
-                  <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Requirement Clarification</span> – I ask the right questions to make sure we’re testing the right things.</li>
-                  <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Proactive Updates</span> – I keep the team in the loop about testing progress, blockers, and changes.</li>
-               </ul>
-            </div>
-         </div>
-      </section>
-      <!-- Soft Skill -->
-      <section class="py-12 bg-white-50" id="soft-skills">
-         <div class="container mx-auto px-4 max-w-5xl">
-            <h2 class="text-3xl font-extrabold text-gray-900 mb-2">Soft Skills</h2>
-            <div class="flex flex-wrap gap-2 text-sm">
-               <ul class="list-disc list-inside">
-                  <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Critical Thinking</span> – Asking the right questions, challenging assumptions.</li>
-                  <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Proactive Attitude</span> – Identifying potential issues before they happen.</li>
-                  <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Adaptability</span> – Learning new tools, adjusting to new workflows quickly.</li>
-                  <li class="mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Ownership</span> – Driving quality forward across the product lifecycle.</li>
-               </ul>
-            </div>
-         </div>
-      </section>
-      <!-- Quick Stats -->
-      <section class="py-12 bg-white">
-         <div class="container mx-auto px-4 max-w-4xl grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
-            <div>
-               <p class="text-3xl font-bold text-blue-700">3+</p>
-               <p class="text-sm">Years in QA</p>
-            </div>
-            <div>
-               <p class="text-3xl font-bold text-blue-700">2000+</p>
-               <p class="text-sm">Test Cases Written</p>
-            </div>
-            <div>
-               <p class="text-3xl font-bold text-blue-700">10</p>
-               <p class="text-sm">Testing Tools</p>
-            </div>
-            <div>
-               <p class="text-3xl font-bold text-blue-700">200+</p>
-               <p class="text-sm">Bugs Found & Fixed</p>
-            </div>   
-         </div>
-      </section>
-      <!-- Footer Call-to-Action -->
-      <section class="py-16 bg-blue-100 text-center">
-         <h2 class="text-2xl font-bold mb-2">Ready to Work Together?</h2>
-         <p class="mb-6 text-gray-600 max-w-xl mx-auto">
-            I'm always interested in new opportunities and collaborations. Let’s discuss how we can bring your vision to life.
-         </p>
-         <a href="contact.html" class="bg-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700">
-         Get In Touch
-         </a>
-      </section>
-
-      <!-- scroll spy -->
-       <button id="backToTop" class="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hidden hover:bg-blue-700 transition">↑</button>
-
-      <script>
-         const btn = document.getElementById("backToTop");
-         window.addEventListener("scroll", () => {
-            btn.style.display = window.scrollY > 300 ? "block" : "none";
-         });
-         btn.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-      </script>
-
-      <script>
-         // Additional interactivity/scripts can go here
-      </script>
-   </body>
+  <script src="assets/app.js"></script>
+</body>
 </html>

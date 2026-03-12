@@ -1,0 +1,120 @@
+/* assets/styles.css */
+:root {
+  --ring: rgba(59, 130, 246, 0.35);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Subtle hero floating */
+@keyframes floaty {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.floaty {
+  animation: floaty 6s ease-in-out infinite;
+}
+
+/* Soft gradient blob movement */
+@keyframes blob {
+  0%   { transform: translate(0px, 0px) scale(1); }
+  33%  { transform: translate(18px, -12px) scale(1.03); }
+  66%  { transform: translate(-14px, 14px) scale(0.98); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.blob {
+  animation: blob 10s ease-in-out infinite;
+}
+
+/* Reveal animation base */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 700ms ease, transform 700ms ease;
+  will-change: opacity, transform;
+}
+
+.reveal.reveal-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Modal + lightbox */
+.backdrop {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.focus-ring:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--ring);
+}
+
+/* Carousel */
+.carousel-slide.hidden {
+  display: none;
+}
+
+.carousel-container button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Image and Video Fitting */
+.carousel-viewer {
+  max-width: 100%;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-slide {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive image heights */
+@media (max-width: 640px) {
+  .carousel-slide {
+    max-height: 60vh;
+  }
+}
+
+/* Clickable carousel images */
+.carousel-slide[data-lightbox-open] {
+  cursor: pointer;
+  transition: filter 200ms ease, transform 200ms ease;
+}
+
+.carousel-slide[data-lightbox-open]:hover {
+  filter: brightness(0.9);
+}
+
+.carousel-slide[data-lightbox-open]:active {
+  transform: scale(0.98);
+}
+
+@media (min-width: 641px) {
+  .carousel-slide {
+    max-height: 75vh;
+  }
+}
