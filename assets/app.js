@@ -159,7 +159,6 @@ function initLightbox() {
   const lb = qs("[data-lightbox]");
   const img = qs("[data-lightbox-img]");
   const title = qs("[data-lightbox-title]");
-  const details = qs("[data-lightbox-details]");
   const closeBtn = qs("[data-lightbox-close]");
   const backdrop = qs("[data-lightbox-backdrop]");
   const triggers = qsa("[data-lightbox-open]");
@@ -170,61 +169,6 @@ function initLightbox() {
     img.src = payload.src;
     img.alt = payload.title || "Preview";
     title.textContent = payload.title || "Preview";
-    
-    // Populate detailed information with all 4 fields
-    let detailsHTML = `<div class="space-y-5">`;
-    
-    if (payload.context) {
-      detailsHTML += `
-        <div>
-          <p class="text-sm font-semibold text-slate-900">Context</p>
-          <p class="mt-1.5 text-sm text-slate-900 leading-relaxed">${payload.context}</p>
-        </div>
-      `;
-    }
-    
-    if (payload.role) {
-      detailsHTML += `
-        <div>
-          <p class="text-sm font-semibold text-slate-900">My role</p>
-          <p class="mt-1.5 text-sm text-slate-900 leading-relaxed">${payload.role}</p>
-        </div>
-      `;
-    }
-    
-    if (payload.tools && payload.tools.length) {
-      detailsHTML += `
-        <div>
-          <p class="text-sm font-semibold text-slate-900">Tools used</p>
-          <div class="mt-2 flex flex-wrap gap-2">
-            ${payload.tools.map(t => `<span class="rounded-full border border-slate-300 bg-slate-100 px-3 py-1 text-xs text-slate-900">${t}</span>`).join("")}
-          </div>
-        </div>
-      `;
-    }
-    
-    if (payload.result) {
-      detailsHTML += `
-        <div>
-          <p class="text-sm font-semibold text-slate-900">Result</p>
-          <p class="mt-1.5 text-sm text-slate-900 leading-relaxed">${payload.result}</p>
-        </div>
-      `;
-    }
-    
-    if (payload.tags && payload.tags.length) {
-      detailsHTML += `
-        <div>
-          <div class="mt-4 flex flex-wrap gap-2">
-            ${payload.tags.map(tag => `<span class="rounded-full border border-slate-300 bg-slate-100 px-3 py-1 text-xs text-slate-900">${tag}</span>`).join("")}
-          </div>
-        </div>
-      `;
-    }
-    
-    detailsHTML += `</div>`;
-    
-    details.innerHTML = detailsHTML;
     
     lb.classList.remove("hidden");
     lockBody(true);

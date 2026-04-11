@@ -1,0 +1,18 @@
+/* Fix carousel layout - descriptions on right side */
+@media (min-width: 1024px) {
+  .carousel-container {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+  
+  .carousel-container .carousel-descriptions {
+    grid-column: 2;
+    grid-row: 1;
+    display: block !important;
+    max-height: 75vh;
+    overflow-y: auto;
+    padding-right: 1rem;
+  }
+}
