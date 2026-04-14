@@ -363,14 +363,15 @@ html.dark #theme-toggle-mobile:hover {
   max-width: 100%;
   overflow: hidden;
   width: 100%;
+  aspect-ratio: 16 / 10;
 }
 
 .carousel-slide {
   display: block;
   max-width: 100%;
   width: 100%;
-  height: auto;
-  max-height: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 img, video {
@@ -379,10 +380,43 @@ img, video {
   display: block;
 }
 
-/* Responsive image heights */
-@media (max-width: 640px) {
-  .carousel-slide {
-    max-height: 60vh;
+/* Mobile: Stack layout vertically */
+@media (max-width: 1023px) {
+  .carousel-container {
+    padding: 0.75rem;
+  }
+  
+  .carousel-viewer {
+    min-height: 200px;
+    max-height: 300px;
+  }
+  
+  .carousel-descriptions {
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 0.5rem;
+  }
+  
+  .carousel-description {
+    font-size: 0.875rem;
+  }
+  
+  .carousel-description p {
+    font-size: 0.8125rem;
+  }
+}
+
+/* Tablets and larger */
+@media (min-width: 1024px) {
+  .carousel-viewer {
+    min-height: 300px;
+    max-height: 500px;
+  }
+  
+  .carousel-descriptions {
+    max-height: 500px;
+    overflow-y: auto;
+    padding-left: 1.5rem;
   }
 }
 
@@ -398,10 +432,4 @@ img, video {
 
 .carousel-slide[data-lightbox-open]:active {
   transform: scale(0.98);
-}
-
-@media (min-width: 641px) {
-  .carousel-slide {
-    max-height: 75vh;
-  }
 }
