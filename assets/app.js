@@ -77,7 +77,7 @@ function initReveal() {
         io.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.14 });
+  }, { threshold: 0.05 });
 
   els.forEach(el => io.observe(el));
 }
@@ -210,45 +210,101 @@ function initCarousels() {
     const descriptions = qsa(".carousel-description", container);
     const currentSpan = qs(".carousel-current", container);
     const totalSpan = qs(".carousel-total", container);
+    const viewer = qs(".carousel-viewer", container);
 
     if (!slides.length || !descriptions.length) return;
 
     let currentIndex = 0;
     const totalSlides = slides.length;
+    let touchStartX = 0;
+    let touchEndX = 0;
 
     // Update total count
     if (totalSpan) totalSpan.textContent = totalSlides;
 
     const showSlide = (index) => {
+      // Normalize index for infinite looping
+      currentIndex = ((index % totalSlides) + totalSlides) % totalSlides;
+
       // Hide all slides and descriptions
-      slides.forEach(s => s.classList.add("hidden"));
+      slides.forEach(s => {
+        s.classList.add("hidden");
+        const existingTitle = qs(".carousel-slide-title", s.parentElement);
+        if (existingTitle) existingTitle.remove();
+      });
       descriptions.forEach(d => d.classList.add("hidden"));
 
       // Show current slide and description
-      slides[index].classList.remove("hidden");
-      descriptions[index].classList.remove("hidden");
+      const currentSlide = slides[currentIndex];
+      currentSlide.classList.remove("hidden");
+      descriptions[currentIndex].classList.remove("hidden");
+
+      // Add title overlay
+      const slideData = currentSlide.getAttribute("data-lightbox-open");
+      if (slideData) {
+        try {
+          const data = JSON.parse(slideData);
+          if (data.title) {
+            const titleOverlay = document.createElement("div");
+            titleOverlay.className = "carousel-slide-title";
+            titleOverlay.textContent = data.title;
+            viewer.appendChild(titleOverlay);
+          }
+        } catch (e) {
+          console.error("Error parsing slide data:", e);
+        }
+      }
 
       // Update counter
-      if (currentSpan) currentSpan.textContent = index + 1;
-
-      // Disable prev button on first slide, next button on last slide
-      if (prevBtn) prevBtn.disabled = index === 0;
-      if (nextBtn) nextBtn.disabled = index === totalSlides - 1;
+      if (currentSpan) currentSpan.textContent = currentIndex + 1;
     };
 
-    prevBtn?.addEventListener("click", () => {
-      if (currentIndex > 0) {
-        currentIndex--;
-        showSlide(currentIndex);
+    const nextSlide = () => {
+      showSlide(currentIndex + 1);
+    };
+
+    const prevSlide = () => {
+      showSlide(currentIndex - 1);
+    };
+
+    // Click navigation
+    nextBtn?.addEventListener("click", nextSlide);
+    prevBtn?.addEventListener("click", prevSlide);
+
+    // Keyboard navigation
+    document.addEventListener("keydown", (e) => {
+      if (container.offsetParent !== null) { // Only if visible
+        if (e.key === "ArrowRight") nextSlide();
+        if (e.key === "ArrowLeft") prevSlide();
       }
     });
 
-    nextBtn?.addEventListener("click", () => {
-      if (currentIndex < totalSlides - 1) {
-        currentIndex++;
-        showSlide(currentIndex);
+    // Touch/swipe support for mobile
+    if (viewer) {
+      viewer.addEventListener("touchstart", (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, false);
+
+      viewer.addEventListener("touchend", (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+      }, false);
+    }
+
+    const handleSwipe = () => {
+      const swipeThreshold = 50; // Minimum distance for swipe
+      const diff = touchStartX - touchEndX;
+
+      if (Math.abs(diff) > swipeThreshold) {
+        if (diff > 0) {
+          // Swiped left - show next slide
+          nextSlide();
+        } else {
+          // Swiped right - show previous slide
+          prevSlide();
+        }
       }
-    });
+    };
 
     // Initialize first slide
     showSlide(0);
